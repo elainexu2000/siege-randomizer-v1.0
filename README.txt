@@ -1,6 +1,8 @@
 .LOG
 Siege Randomizer
 
+TODO: write a professional (?) README file
+
 Running SiegeRandomizer: 
 1. Open terminal: 
 	On Windows: Win + R, type in 'cmd' 
