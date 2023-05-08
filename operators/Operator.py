@@ -25,8 +25,7 @@ class Operator:
         """
         Precondition: gadget is a valid Gadget object
         """
-        if self.side == "Attack" and not gadget.is_attacker_specific or \
-            self.side == "Defend" and gadget.is_attacker_specific:
+        if self.side != gadget.side:
                 print("Side mismatch: ", str(gadget), "is not", self.side, "specific")
                 # raise ValueError <-- how to handle this?
         self.gadgets.append(gadget)
