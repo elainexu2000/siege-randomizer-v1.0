@@ -76,6 +76,7 @@ def main():
                 raise ValueError
         except:
             print("Invalid choice. Please try again.")
+            continue
         
         if option == 0:
             print("Program terminated. ")
