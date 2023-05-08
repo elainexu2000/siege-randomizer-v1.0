@@ -22,6 +22,13 @@ class Operator:
         return self.name
     
     def add_gadget(self, gadget):
+        """
+        Precondition: gadget is a valid Gadget object
+        """
+        if self.side == "Attack" and not gadget.is_attacker_specific or \
+            self.side == "Defend" and gadget.is_attacker_specific:
+                print("Side mismatch: ", str(gadget), "is not", self.side, "specific")
+                # raise ValueError <-- how to handle this?
         self.gadgets.append(gadget)
 
     def add_weapon(self, weapon, is_primary = True):
@@ -34,6 +41,9 @@ class Operator:
             self.secondary.append(weapon)
     
     def get_random_loadout(self):
+        """
+        Returns a random loadout in the form of a dictionary with keys = element type and values = element identity
+        """
         loadout = {}
         primary = choice(self.primary)
         loadout["Primary"] = str(primary)
@@ -50,14 +60,7 @@ class Operator:
         loadout["Secondary Under Barrel"] = choice(secondary.under_barrels)
         loadout["Gadget"] = str(choice(self.gadgets))
         return loadout
-    
-    def get_random_primary(self):
-        primary = choice(self.primary)
-        primary_grip = choice(primary.grips)
-        primary_barrel = choice(primary.barrels)
-        primary_scope = choice(primary.scopes)
-        primary_under_barrel = choice(primary.under_barrels)
-        return primary, primary_grip, primary_barrel, primary_scope, primary_under_barrel
+
 
         
 
