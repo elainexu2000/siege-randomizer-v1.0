@@ -6,6 +6,7 @@ class Weapon:
         barrels: available barrels (including None)
         scopes: available scopes (including None)
         under_barrel: available under barrels (including None)
+        image: relative path to weapon's image representation
     """
     """
         Ubisoft's balancing strategies for Rainbow Six Siege involve controlling access to 
