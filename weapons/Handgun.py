@@ -91,7 +91,3 @@ class KERATOS_357(Handgun):
 class P_10C(Handgun):
     def __init__(self):
         super().__init__("P-10C")
-
-if __name__ == "__main__":
-    print(LFP586().barrels)
-    print(P12())
