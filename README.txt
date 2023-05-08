@@ -3,14 +3,25 @@ Siege Randomizer
 
 TODO: write a professional (?) README file
 
-Running SiegeRandomizer: 
+Prerequisites: Download and install Python 3
+
+Installation Instructions:
+
+
+
+Usage Guide: 
 1. Open terminal: 
-	On Windows: Win + R, type in 'cmd' 
+	For Windows users: 
+		Press "Windows key + R" to open the Run dialog box.
+		Type "cmd" and press Enter.
+	For Mac users: 
+		CPress "Command + Spacebar" to open the Spotlight Search. 
+		Type "Terminal" in the search bar and press Enter. 
 2. Navigate to the directory where SiegeRandomizer.py is located:
-	Type 'cd C:\Users\...\siege-randomizer-v1' into terminal
-3. Execute the SiegeRandomizer.py file:
-	Type 'python SiegeRandomizer.py' into terminal
-4. Follow program instructions
+	Type "cd" followed by the file path to siege-randomizer-v1: 'cd C:\Users\...\siege-randomizer-v1' and press enter.
+3. Execute SiegeRandomizer.py:
+	Type 'python SiegeRandomizer.py' and press enter.
+4. Follow program instructions.
 
 
 
