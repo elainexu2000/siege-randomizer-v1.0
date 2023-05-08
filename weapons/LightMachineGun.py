@@ -41,9 +41,3 @@ class DP27(LMG):
 class ALDA_5_56(LMG):
     def __init__(self):
         super().__init__("ALDA 5.56", grips = ["None", "Vertical Grip"], max_magnification = 1.0)
-
-if __name__ == "__main__":
-    l1 = T_95_LSW()
-    print(l1)
-    g8 = G8A1(updated_mag=1.0)
-    print(g8.scopes)

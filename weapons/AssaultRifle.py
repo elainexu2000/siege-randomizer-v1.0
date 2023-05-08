@@ -109,14 +109,3 @@ class AR_416_C_CARBINE(AR):
 class COMMANDO_9(AR):
     def __init__(self):
         super().__init__("Commando 9", barrels = AR.BARRELS + ["Extended Barrel"], max_magnification = 1.0)
-
-
-if __name__ == "__main__":
-    l85a2_orig = L85A2()
-    l85a2 = L85A2(1.5)
-    print(l85a2_orig.scopes)
-    print(l85a2.scopes)
-    #g36c = G36C()
-    #print(g36c.scopes)
-    #ar33 = AR33()
-    #print(ar33.scopes)

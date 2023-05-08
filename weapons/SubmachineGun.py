@@ -89,7 +89,3 @@ class P10_RONI(SMG):
 class UZK50GI(SMG):
     def __init__(self):
         super().__init__("UZK50GI")
-
-if __name__ == "__main__":
-    print(VECTOR_45_ACP().scopes)
-    print(VECTOR_45_ACP(1.0).scopes)

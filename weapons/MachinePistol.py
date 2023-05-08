@@ -27,6 +27,3 @@ class C75_Auto(MachinePistol):
 class SPSMG9(MachinePistol):
     def __init__(self):
         super().__init__("SPSMG9")
-
-if __name__ == "__main__":
-    print(Bearing_9())
