@@ -21,7 +21,6 @@ class Weapon:
     BARRELS = ["None", "Suppressor", "Compensator", "Flash Hider", "Extended Barrel", "Muzzle Break"]
     UNDER_BARRELS = ["None", "Laser"]
 
-    # Scopes:
     ONE_TIME = ["None", "Holo A", "Holo B", "Holo C", "Holo D", "Red Dot A", "Red Dot B", "Red Dot C", "Reflex A", "Reflex B", "Reflex C"]
     ONE_PT_FIVE = ["1.5x"]
     TWO_TIMES = ["2.0x"]
