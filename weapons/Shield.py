@@ -6,7 +6,7 @@ class Shield(Weapon):
     
 class LE_ROC_Shield(Shield):
     def __init__(self):
-        super().__init__("LE_ROC_Shield")
+        super().__init__("LE ROC Shield")
 
 class Ballistic_Shield(Shield):
     def __init__(self):
@@ -14,7 +14,7 @@ class Ballistic_Shield(Shield):
 
 class G52_Tactical_Shield(Shield):
     def __init__(self):
-        super().__init__("G52-Tactical-Shield")
+        super().__init__("G52 Tactical Shield")
 
 class CCE_Shield(Shield):
     def __init__(self):
