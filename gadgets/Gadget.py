@@ -1,11 +1,11 @@
 class Gadget:
     """ Attributes:
         name: (string) name of the gadget
-        is_attacker_specific: True if this gadget is attacker-specific; False if defender-specific 
+        side: in ["Attack", "Defend"]
     """
     def __init__(self, name, is_attacker_specific):
         self.name = name
-        self.is_attacker_specific = is_attacker_specific
+        self.side = "Attack" if is_attacker_specific else "Defend"
     
     def __str__(self):
         return self.name
