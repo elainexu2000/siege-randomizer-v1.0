@@ -53,8 +53,4 @@ class Weapon:
         """
         return self.name
 
-if __name__ == "__main__":
-    # name, grips, barrels, under_barrels, max_magnification
-    w1 = Weapon("Test", Weapon.GRIPS, Weapon.BARRELS, Weapon.UNDER_BARRELS, max_magnification= 3.0)
-    print(w1.scopes)
         
