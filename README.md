@@ -2,7 +2,7 @@
 
 **TODO: write a *README* file**  
 
-## Project Description:
+## Project Description: 
 The Siege Randomizer is a tool that generates a random operator and loadout for use in Rainbow Six Siege gameplay. It is currently being developed to include map-specific spawn location randomization, user input tactics, user preferences for operators and attachments, and frontend improvements.
 
 ## Prerequisites: 
