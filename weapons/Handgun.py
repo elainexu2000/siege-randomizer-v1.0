@@ -32,6 +32,10 @@ class PMM(Handgun):
     def __init__(self):
         super().__init__("PMM")
 
+class GSH_18(Handgun):
+    def __init__(self):
+        super().__init__("GSH-18")
+
 class P12(Handgun):
     def __init__(self):
         super().__init__("P12")
@@ -48,6 +52,10 @@ class PRB92(Handgun):
     def __init__(self):
         super().__init__("PRB92")
 
+class LUISON(Handgun):
+    def __init__(self):
+        super().__init__("LUISON", barrels = ["Suppressor"])
+        
 class P229(Handgun):
     def __init__(self):
         super().__init__("P229")
@@ -64,10 +72,6 @@ class RG15(Handgun):
     def __init__(self):
         super().__init__("RG15")
 
-class GSH_18(Handgun):
-    def __init__(self):
-        super().__init__("GSH-18")
-
 class H_1911_TACOPS(Handgun):
     def __init__(self):
         super().__init__("1911 TACOPS")
@@ -79,10 +83,6 @@ class H_44_Mag_Semi_Auto(Handgun):
 class SDP_9mm(Handgun):
     def __init__(self):
         super().__init__("SDP 9mm")
-
-class LUISON(Handgun):
-    def __init__(self):
-        super().__init__("LUISON", barrels = ["Suppressor"])
 
 class KERATOS_357(Handgun):
     def __init__(self):
