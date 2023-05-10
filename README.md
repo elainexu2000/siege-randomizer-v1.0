@@ -3,11 +3,11 @@
 TODO: write a README file
 
 ### Prerequisites: 
-	Python 3
+Python 3
 
 ### Dependency: 
-	See requirements.txt 
-	(which doesn't exist because there is no dependency requirements as for now)
+See requirements.txt 
+(which doesn't exist because there is no dependency requirements as for now)
 
 ## Installation Instructions:
 1. Download project:
@@ -34,7 +34,6 @@ TODO: write a README file
 2. Navigate to the directory where SiegeRandomizer.py is located:
 	
 		Type "cd" followed by the file path to siege-randomizer-vx.x-master: 
-	
 		'cd C:\Users\...\siege-randomizer-vx.x-master'
 
 3. Execute SiegeRandomizer.py:
