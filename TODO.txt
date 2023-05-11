@@ -12,6 +12,8 @@ Project design:
 	- Page design
 3. Deployment: is github page enough?
 4. What additional features to support?
+	- TRANSLATION: yeah why do my friends speak so many different languages??
+		- but not THAT many languages -- additional attributes viable?
 	- Map selection + random spawn location
 		- How to store that information for the session?
 	- User-input random tactics
@@ -19,11 +21,11 @@ Project design:
 
 Program logics:
 1. Exception handling:
-	- Should add_gadget throw exception when side don't match?
-	(like trying to add c4 to an attacker) 
-	user shouldn't be able to interact with this <- prob not
+	- Should add_gadget throw exception when sides don't match?
+		(i.e. trying to add c4 to an attacker) 
+		user shouldn't be able to interact with this <- prob not
 2. Should i take object-oriented to the extreme and make separate classes for scope/barrel/laser/grip?
-	- So that a Weapon HAS A scope, HAS a barrel,..., and a Scope HAS AN attribute (path to image)...
+	- So that a Weapon HAS A scope, HAS a barrel,..., and a Scope HAS an attribute (path to image)...
 
 
 Minor stuff:
