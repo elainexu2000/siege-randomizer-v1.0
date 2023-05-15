@@ -36,6 +36,7 @@
 4. Additional features to support?
 	- **TRANSLATION: yeah why do my friends speak so many different languages??**
 		- but not THAT many languages -- _additional attributes_ viable?
+		- actually just kidding i have no friends
 	- Map selection + random spawn location
 		- How to store that information for the session?
 	- User-input random tactics
