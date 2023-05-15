@@ -9,9 +9,6 @@ class Operator:
         secondaries: set of all available secondary weapons
     """
     def __init__(self, name, side):
-        """
-        Precondition: side in ["Attack", "Defend"]
-        """
         self.name = name
         self.side = side
         self.gadgets = []
@@ -22,13 +19,11 @@ class Operator:
         return self.name
     
     def add_gadget(self, gadget):
-        """
-        Precondition: gadget is a valid Gadget object
-        """
         if self.side != gadget.side:
-                print("Side mismatch: ", str(gadget), "is not", self.side, "specific")
-                # raise ValueError <-- how to handle this?
-        self.gadgets.append(gadget)
+            print("Side mismatch: ", str(gadget), "is not", self.side, "specific")
+            # raise ValueError 
+        else:
+            self.gadgets.append(gadget)
 
     def add_weapon(self, weapon, is_primary = True):
         """
@@ -41,7 +36,7 @@ class Operator:
     
     def get_random_loadout(self):
         """
-        Returns a random loadout in the form of a dictionary with keys = element type and values = element identity
+        Returns a random loadout in the form of a dictionary with key = element type and value = element identity
         """
         loadout = {}
         primary = choice(self.primaries)
@@ -50,7 +45,6 @@ class Operator:
         loadout["Primary Barrel"] = choice(primary.barrels)
         loadout["Primary Scope"] = choice(primary.scopes)
         loadout["Primary Under Barrel"] = choice(primary.under_barrels)
-        
         secondary = choice(self.secondaries)
         loadout["Secondary"] = str(secondary)
         loadout["Secondary Grip"] = choice(secondary.grips)
