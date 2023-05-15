@@ -2,66 +2,49 @@ from random import choice
 from operators.Attacker import *
 from operators.Defender import *
 
-def get_random_defender():
-    return choice([cls() for cls in Defender.__subclasses__()])
+# Global variables: 
+attackers = [cls() for cls in Attacker.__subclasses__()]
+defenders = [cls() for cls in Defender.__subclasses__()]
+all_operators = attackers + defenders
 
-def get_random_attacker():
-    return choice([cls() for cls in Attacker.__subclasses__()])
-
-def get_random_operator():
-    all_ops = [cls() for cls in Attacker.__subclasses__()] + [cls() for cls in Defender.__subclasses__()]
-    return choice(all_ops)
-
-def pretty_print_loadout(loadout):
-    primary = loadout["Primary"]
-    primary_grip = loadout["Primary Grip"]
-    primary_barrel = loadout["Primary Barrel"]
-    primary_scope = loadout["Primary Scope"]
-    primary_under_barrel = loadout["Primary Under Barrel"]
-
-    secondary = loadout["Secondary"]
-    secondary_grip = loadout["Secondary Grip"]
-    secondary_barrel = loadout["Secondary Barrel"]
-    secondary_scope = loadout["Secondary Scope"]
-    secondary_under_barrel = loadout["Secondary Under Barrel"]
-    gadget = loadout["Gadget"]
-
-    print("Gadget:",gadget)
-    print("Primary:", primary)
-    print("         Grip:        ", primary_grip)
-    print("         Barrel:      ", primary_barrel)
-    print("         Scope:       ", primary_scope)
-    print("         Under Barrel:", primary_under_barrel)
-    print("Secondary:", secondary)
-    print("         Grip:        ", secondary_grip)
-    print("         Barrel:      ", secondary_barrel)
-    print("         Scope:       ", secondary_scope)
-    print("         Under Barrel:", secondary_under_barrel)
+def print_loadout_cmd(loadout):
+    """
+        Formats and prints a loadout dictionary suitable for displaying in command prompt
+    """
+    print("Gadget:", loadout["Gadget"])
+    print("Primary:", loadout["Primary"])
+    print("         Grip:        ", loadout["Primary Grip"])
+    print("         Barrel:      ", loadout["Primary Barrel"])
+    print("         Scope:       ", loadout["Primary Scope"])
+    print("         Under Barrel:", loadout["Primary Under Barrel"])
+    print("Secondary:", loadout["Secondary"])
+    print("         Grip:        ", loadout["Secondary Grip"])
+    print("         Barrel:      ", loadout["Secondary Barrel"])
+    print("         Scope:       ", loadout["Secondary Scope"])
+    print("         Under Barrel:", loadout["Secondary Under Barrel"])
 
 def display_available_gadgets_and_weapons(option):
     """
-        Prints all available secondary gadgets and weapons (alongside with the scope of max magnification) for all operators in the designated category:
+        Helper function that prints all available secondary gadgets and weapons (alongside with the scope of max magnification) for all operators in the designated category:
         option = 1: attackers
         option = 2: defenders
         option = 0 (or any other value): all operators
-        Precondition: option is an integer
     """
     candidates = []
     if option == 1:
-        candidates = [cls() for cls in Attacker.__subclasses__()]
+        candidates = attackers
     elif option == 2:
-        candidates = [cls() for cls in Defender.__subclasses__()]
+        candidates = defenders
     else:
-        candidates = [cls() for cls in Attacker.__subclasses__()] + [cls() for cls in Defender.__subclasses__()]
+        candidates = all_operators
     
-    for cls in candidates:
-        op = cls()
-        print(op, ":", op.gadgets)
-        for p in op.primary:
-            print("      ", p, ":", p.scopes[-1])
+    for operator in candidates:
+        print(operator, ":", operator.gadgets)
+        for weapon in operator.primary:
+            print("      ", weapon, ":", weapon.scopes[-1])
         print()
-        for p in op.secondary:
-            print("      ", p, ":", p.scopes[-1])
+        for weapon in operator.secondary:
+            print("      ", weapon, ":", weapon.scopes[-1])
 
 def main():
     while(True):
@@ -69,30 +52,29 @@ def main():
               \n[1] All attackers\
               \n[2] All defenders\
               \n[3] All operators\
-              \n[0] Terminate the program")
+              \n[0] Exit program")
         try:
             option = int(input("Enter a number from 0 to 3 (do not include brackets):"))
             if option not in range(4):
                 raise ValueError
         except:
-            print("Invalid choice. Please try again.")
+            print("Invalid choice. Redirecting to home...")
             continue
         
         if option == 0:
             print("Program terminated. ")
             break
         elif option == 1:
-            op = get_random_attacker()
+            operator = choice(attackers)
         elif option == 2:
-            op = get_random_defender()
+            operator = choice(defenders)
         else:
-            op = get_random_operator()
+            operator = choice(all_operators)
         
-        d = op.get_random_loadout()
-        print(op)
-        pretty_print_loadout(d)
+        print(operator)
+        print_loadout_cmd(operator.get_random_loadout())
         
-        keep_going = input("Would you like to continue? Y/N: ")
+        keep_going = input("Would you like to continue? (Y/N): ")
         if keep_going in ['y', 'Y']:
             continue
         elif keep_going in ['n','N']:
