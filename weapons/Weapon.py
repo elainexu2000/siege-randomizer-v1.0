@@ -1,4 +1,3 @@
-from random import choice
 class Weapon:
     """ Attributes:
         name: weapon name (as displayed in game)
@@ -37,7 +36,7 @@ class Weapon:
         if max_magnification == 0:
             self.scopes = ['None']
         elif max_magnification == 1:
-            self.scopes = Weapon.ONE_TIME
+            self.scopes = Weapon.ONE_TIME.copy()
         elif max_magnification == 1.5:
             self.scopes = Weapon.ONE_TIME + Weapon.ONE_PT_FIVE
         elif max_magnification == 2.0:
