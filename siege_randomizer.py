@@ -1,6 +1,6 @@
 from random import choice
-from operators.Attacker import *
-from operators.Defender import *
+from operators.attacker import *
+from operators.defender import *
 
 # Global constants: 
 ATTACKERS = tuple([cls() for cls in Attacker.__subclasses__()])

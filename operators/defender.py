@@ -1,13 +1,13 @@
-from operators.Operator import Operator
+from operators.operator import Operator
 from gadgets.Gadget import *
-from weapons.AssaultRifle import *
-from weapons.Handgun import *
-from weapons.LightMachineGun import *
-from weapons.MachinePistol import *
-from weapons.MarksmanRifle import *
-from weapons.Shield import *
-from weapons.Shotgun import *
-from weapons.SubmachineGun import *
+from weapons.assault_rifle import *
+from weapons.handgun import *
+from weapons.light_machine_gun import *
+from weapons.machine_pistol import *
+from weapons.marksman_rifle import *
+from weapons.shield import *
+from weapons.shotgun import *
+from weapons.submachine_gun import *
 
 class Defender(Operator):
     def __init__(self, name):
