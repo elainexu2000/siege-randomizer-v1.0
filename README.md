@@ -1,7 +1,5 @@
 # Siege Randomizer
 
-**TODO: write a *README* file**  
-
 ## Project Description: 
 The Siege Randomizer is a tool that generates a random operator and loadout for use in Rainbow Six: Siege gameplay. It is currently being developed to include map-specific spawn location randomization, user input tactics, user preferences for operators and attachments, and frontend improvements.
 
@@ -10,38 +8,38 @@ The Siege Randomizer is a tool that generates a random operator and loadout for 
 
 ## Dependencies: 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;See *requirements.txt*  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(which doesn't yet exist because there is currently no dependency requirements)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...which doesn't exist because there is currently no dependency requirements
 
 ## Installation Instructions:
 1. Download project:
 
 		Click on '<>Code' (top right corner) > Download ZIP
 
-2. Extract file:
+2. Extract files:
 
 		folder: siege-randomizer-vx.x-master
 
-## Usage Guide (from terminal): 
+## Usage Guide (placeholder -- nobody does it this way; only for testing purposes): 
 1. Open terminal: 
 	
-	For Windows users: 
+	Windows: 
 
 		Press 'Windows key' + 'R' to open the Run dialog box.
 		Type 'cmd' and press Enter.
 	
-	For Mac users: 
+	Mac: 
 
 		Press 'Command' + 'Space' to open the Spotlight Search. 
 		Type 'Terminal' in the search bar and press Enter. 
 
-2. Navigate to the directory where *SiegeRandomizer.py* is located:
+2. Navigate to the directory where *siege_randomizer.py* is located:
 	
 		Type 'cd' followed by the file path to siege-randomizer-vx.x-master: 
 		'cd C:\Users\...\siege-randomizer-vx.x-master'
 
-3. Execute *SiegeRandomizer.py*:
+3. Run *siege_randomizer.py*:
 	
-		Type 'python SiegeRandomizer.py' and press enter.
+		Type 'python siege_randomizer.py' and press enter.
 
 4. Follow program instructions.
 
