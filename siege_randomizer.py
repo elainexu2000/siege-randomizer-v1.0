@@ -2,7 +2,7 @@ from random import choice
 from operators.attacker import *
 from operators.defender import *
 
-# Global constants: 
+# Global:
 ATTACKERS = tuple([cls() for cls in Attacker.__subclasses__()])
 DEFENDERS = tuple([cls() for cls in Defender.__subclasses__()])
 ALL_OPERATORS = ATTACKERS + DEFENDERS
@@ -86,6 +86,6 @@ def main():
             print("Invalid choice. Redirecting to home...")
 
 if __name__ == "__main__":
-    display_available_gadgets_and_weapons(3)
-    #main()
+    #display_available_gadgets_and_weapons(3)
+    main()
 
