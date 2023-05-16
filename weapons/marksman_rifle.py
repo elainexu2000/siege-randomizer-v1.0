@@ -41,10 +41,3 @@ class AR_15_50(DMR):
 class CSRX300(DMR):
     def __init__(self):
         super().__init__("CSRX 300", grips=["None"], barrels=["None"], under_barrels=["None"], max_magnification=0)
-
-if __name__ == "__main__":
-    dmr1 = M417()
-    print(dmr1)
-
-    dmr2 = CAMRS()
-    print(dmr2.grips)
