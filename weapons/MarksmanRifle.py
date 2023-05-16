@@ -19,6 +19,7 @@ class OTs_03(DMR):
     def __init__(self):
         super().__init__("OTs-03", max_magnification = 1)
         if 'Reflex C' in self.scopes:
+            self.scopes = [x for x in self.scopes]
             self.scopes.remove('Reflex C')
 
 class CAMRS(DMR):

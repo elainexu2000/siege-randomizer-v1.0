@@ -102,7 +102,7 @@ class Glaz(Attacker):
         self.add_weapon(Bearing_9(), False)
         self.add_gadget(Smoke_Grenade())
         self.add_gadget(Frag_Grenade())
-
+        
 class Fuze(Attacker):
     def __init__(self):
         super().__init__("Fuze")

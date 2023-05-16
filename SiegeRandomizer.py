@@ -2,10 +2,10 @@ from random import choice
 from operators.Attacker import *
 from operators.Defender import *
 
-# Global variables: 
-attackers = [cls() for cls in Attacker.__subclasses__()]
-defenders = [cls() for cls in Defender.__subclasses__()]
-all_operators = attackers + defenders
+# Global constants: 
+ATTACKERS = tuple([cls() for cls in Attacker.__subclasses__()])
+DEFENDERS = tuple([cls() for cls in Defender.__subclasses__()])
+ALL_OPERATORS = ATTACKERS + DEFENDERS
 
 def print_loadout_cmd(loadout):
     """
@@ -32,19 +32,21 @@ def display_available_gadgets_and_weapons(option):
     """
     candidates = []
     if option == 1:
-        candidates = attackers
+        candidates = ATTACKERS
     elif option == 2:
-        candidates = defenders
+        candidates = DEFENDERS
     else:
-        candidates = all_operators
+        candidates = ALL_OPERATORS
     
     for operator in candidates:
-        print(operator, ":", operator.gadgets)
-        for weapon in operator.primary:
-            print("      ", weapon, ":", weapon.scopes[-1])
+        print(operator, ": ", sep = '' ,end = '')
+        for gadget in operator.gadgets:
+            print(gadget, ";", sep = '' ,end = ' ')
         print()
-        for weapon in operator.secondary:
-            print("      ", weapon, ":", weapon.scopes[-1])
+        for weapon in operator.primaries:
+            print("      ", weapon, ": ", weapon.scopes[-1], sep = '')
+        for weapon in operator.secondaries:
+            print("      ", weapon, ": ", weapon.scopes[-1], sep = '')
 
 def main():
     while(True):
@@ -65,11 +67,11 @@ def main():
             print("Program terminated. ")
             break
         elif option == 1:
-            operator = choice(attackers)
+            operator = choice(ATTACKERS)
         elif option == 2:
-            operator = choice(defenders)
+            operator = choice(DEFENDERS)
         else:
-            operator = choice(all_operators)
+            operator = choice(ALL_OPERATORS)
         
         print(operator)
         print_loadout_cmd(operator.get_random_loadout())
@@ -84,5 +86,6 @@ def main():
             print("Invalid choice. Redirecting to home...")
 
 if __name__ == "__main__":
-    main()
+    display_available_gadgets_and_weapons(3)
+    #main()
 

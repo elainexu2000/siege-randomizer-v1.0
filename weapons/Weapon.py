@@ -17,15 +17,15 @@ class Weapon:
         2.5x, as the maximum magnification for this weapon is 2.5x. However, not all users have access to
         all of these magnifications. 
     """
-    GRIPS = ["None", "Vertical Grip", "Angled Grip"]
-    BARRELS = ["None", "Suppressor", "Compensator", "Flash Hider", "Extended Barrel", "Muzzle Break"]
-    UNDER_BARRELS = ["None", "Laser"]
+    GRIPS = ("None", "Vertical Grip", "Angled Grip")
+    BARRELS = ("None", "Suppressor", "Compensator", "Flash Hider", "Extended Barrel", "Muzzle Break")
+    UNDER_BARRELS = ("None", "Laser")
 
-    ONE_TIME = ["None", "Holo A", "Holo B", "Holo C", "Holo D", "Red Dot A", "Red Dot B", "Red Dot C", "Reflex A", "Reflex B", "Reflex C"]
-    ONE_PT_FIVE = ["1.5x"]
-    TWO_TIMES = ["2.0x"]
-    TWO_PT_FIVE = ['2.5x A', '2.5x B']
-    THREE_TIMES = ['3.0x']
+    ONE_TIME = ("None", "Holo A", "Holo B", "Holo C", "Holo D", "Red Dot A", "Red Dot B", "Red Dot C", "Reflex A", "Reflex B", "Reflex C",)
+    ONE_PT_FIVE = ("1.5x",)
+    TWO_TIMES = ("2.0x",)
+    TWO_PT_FIVE = ('2.5x A', '2.5x B',)
+    THREE_TIMES = ('3.0x',)
     
     def __init__(self, name, grips, barrels, under_barrels, max_magnification):
         self.name = name
@@ -36,7 +36,7 @@ class Weapon:
         if max_magnification == 0:
             self.scopes = ['None']
         elif max_magnification == 1:
-            self.scopes = Weapon.ONE_TIME.copy()
+            self.scopes = Weapon.ONE_TIME
         elif max_magnification == 1.5:
             self.scopes = Weapon.ONE_TIME + Weapon.ONE_PT_FIVE
         elif max_magnification == 2.0:
