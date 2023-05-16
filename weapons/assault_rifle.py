@@ -1,4 +1,4 @@
-from weapons.Weapon import Weapon
+from weapons.weapon import Weapon
 
 class AssaultRifle(Weapon):
     GRIPS = Weapon.GRIPS
@@ -8,7 +8,7 @@ class AssaultRifle(Weapon):
     def __init__(self, name, grips = GRIPS, barrels = BARRELS, under_barrels = UNDER_BARRELS, max_magnification = 1.0):
         super().__init__(name, grips, barrels, under_barrels, max_magnification)
 
-from weapons.AssaultRifle import AssaultRifle as AR
+from weapons.assault_rifle import AssaultRifle as AR
 
 class R4C(AR):
     def __init__(self):
