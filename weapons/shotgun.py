@@ -1,4 +1,4 @@
-from weapons.Weapon import Weapon
+from weapons.weapon import Weapon
 
 class Shotgun(Weapon):
     GRIPS = ["None"]

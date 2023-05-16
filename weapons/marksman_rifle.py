@@ -1,4 +1,4 @@
-from weapons.Weapon import Weapon
+from weapons.weapon import Weapon
 
 class MarksmanRifle(Weapon):
     GRIPS = Weapon.GRIPS
@@ -9,7 +9,7 @@ class MarksmanRifle(Weapon):
                  under_barrels = UNDER_BARRELS, max_magnification = 3.0):
         super().__init__(name, grips, barrels, under_barrels, max_magnification)
 
-from weapons.MarksmanRifle import MarksmanRifle as DMR
+from weapons.marksman_rifle import MarksmanRifle as DMR
 
 class M417(DMR):
     def __init__(self):

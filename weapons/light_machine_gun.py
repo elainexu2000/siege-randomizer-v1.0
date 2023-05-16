@@ -1,4 +1,4 @@
-from weapons.Weapon import Weapon
+from weapons.weapon import Weapon
 
 class LightMachineGun(Weapon):
     GRIPS = Weapon.GRIPS
@@ -8,7 +8,7 @@ class LightMachineGun(Weapon):
     def __init__(self, name, grips = GRIPS, barrels = BARRELS, under_barrels = UNDER_BARRELS, max_magnification = 2.5):
         super().__init__(name, grips, barrels, under_barrels, max_magnification)
 
-from weapons.LightMachineGun import LightMachineGun as LMG
+from weapons.light_machine_gun import LightMachineGun as LMG
 
 class LMG_6P41(LMG):
     def __init__(self, updated_mag = 2.5):

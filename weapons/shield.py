@@ -1,4 +1,4 @@
-from weapons.Weapon import Weapon
+from weapons.weapon import Weapon
 
 class Shield(Weapon):
     def __init__(self, name, grips = ["None"], barrels = ["None"], under_barrels = ["None"], max_magnification = 0):

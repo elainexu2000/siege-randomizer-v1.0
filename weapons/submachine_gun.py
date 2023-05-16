@@ -1,4 +1,4 @@
-from weapons.Weapon import Weapon
+from weapons.weapon import Weapon
 
 class SubmachineGun(Weapon):
     GRIPS = Weapon.GRIPS
@@ -8,7 +8,7 @@ class SubmachineGun(Weapon):
     def __init__(self, name, grips = GRIPS, barrels = BARRELS, under_barrels = UNDER_BARRELS, max_magnification = 1.0):
         super().__init__(name, grips, barrels, under_barrels, max_magnification)
 
-from weapons.SubmachineGun import SubmachineGun as SMG
+from weapons.submachine_gun import SubmachineGun as SMG
 
 class PDW9(SMG):
     def __init__(self, updated_mag = 2.5):
