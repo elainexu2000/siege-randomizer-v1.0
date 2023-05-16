@@ -1,5 +1,5 @@
 from operators.operator import Operator
-from gadgets.Gadget import *
+from gadgets.gadget import *
 from weapons.assault_rifle import *
 from weapons.handgun import *
 from weapons.light_machine_gun import *
