@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Button</title>
+</head>
+<body>
+    <img src="../static/r6_icon.jpg">
+    <button onclick="generate()">Generate</button>
+    <div id="result"></div>
+</body>
+<script>
+  function generate() {
+    fetch('/generate')
+        .then(response => response.json())
+        .then(data => {
+            var resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = "";
+
+            // Create the operator table
+            var operatorTable = document.createElement("table");
+            var operatorTbody = document.createElement("tbody");
+
+            // Create the operator data row
+            var operatorDataRow = document.createElement("tr");
+
+            var operatorNameCell = document.createElement("td");
+            var operatorNameImage = document.createElement("img");
+            operatorNameImage.src = data["Operator"]["Image"];
+            operatorNameCell.appendChild(operatorNameImage);
+
+            var operatorNameText = document.createElement("span");
+            operatorNameText.textContent = data["Operator"]["Name"];
+            operatorNameCell.appendChild(operatorNameText);
+
+            operatorDataRow.appendChild(operatorNameCell);
+            operatorTbody.appendChild(operatorDataRow);
+
+            // Create the gadget data row
+            var gadgetDataRow = document.createElement("tr");
+
+            var gadgetNameCell = document.createElement("td");
+            var gadgetNameImage = document.createElement("img");
+            gadgetNameImage.src = data["Gadget"]["Image"];
+            gadgetNameCell.appendChild(gadgetNameImage);
+
+            var gadgetNameText = document.createElement("span");
+            gadgetNameText.textContent = data["Gadget"]["Name"];
+            gadgetNameCell.appendChild(gadgetNameText);
+
+            gadgetDataRow.appendChild(gadgetNameCell);
+            operatorTbody.appendChild(gadgetDataRow);
+
+            operatorTable.appendChild(operatorTbody);
+
+            // Create the weapons table
+            var weaponsTable = document.createElement("table");
+            var weaponsTbody = document.createElement("tbody");
+
+            var headers = ["Weapon", "Scope", "Barrel", "Under Barrel"];
+
+            var headerRow = document.createElement("tr");
+            for (var i = 0; i < headers.length; i++) {
+                var th = document.createElement("th");
+                th.textContent = headers[i];
+                headerRow.appendChild(th);
+            }
+            weaponsTbody.appendChild(headerRow);
+
+            var weapons = ["Primary", "Secondary"];
+            for (var i = 0; i < weapons.length; i++) {
+                var weaponRow = document.createElement("tr");
+
+                var weaponNameCell = document.createElement("td");
+                var weaponNameImage = document.createElement("img");
+                weaponNameImage.src = data[weapons[i]]["Image"];
+                weaponNameCell.appendChild(weaponNameImage);
+
+                var weaponNameText = document.createElement("span");
+                weaponNameText.textContent = data[weapons[i]]["Name"];
+                weaponNameCell.appendChild(weaponNameText);
+
+                weaponRow.appendChild(weaponNameCell);
+
+                var attributes = ["Scope", "Barrel", "Under Barrel"];
+                for (var j = 0; j < attributes.length; j++) {
+                    var attributeCell = document.createElement("td");
+
+                    var attributeImage = document.createElement("img");
+                    attributeImage.src = data[weapons[i]][attributes[j]]["Image"];
+                    attributeCell.appendChild(attributeImage);
+
+                    var attributeName = document.createElement("span");
+                    attributeName.textContent = data[weapons[i]][attributes[j]]["Name"];
+                    attributeCell.appendChild(attributeName);
+
+                    weaponRow.appendChild(attributeCell);
+                }
+
+                weaponsTbody.appendChild(weaponRow);
+            }
+
+            weaponsTable.appendChild(weaponsTbody);
+
+            // Append both tables to the resultDiv
+            resultDiv.appendChild(operatorTable);
+            resultDiv.appendChild(weaponsTable);
+        });
+}
+
+  /*
+  // This is the text-based version (will not work with updated dictionary format)
+  function generate() {
+    fetch('/generate')
+        .then(response => response.json())
+        .then(data => {
+            var resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = "";
+
+            // Create the operator table
+            var operatorTable = document.createElement("table");
+            var operatorTbody = document.createElement("tbody");
+
+            // Create the operator header row
+            var operatorHeaderRow = document.createElement("tr");
+
+            var operatorHeaderCell = document.createElement("th");
+            operatorHeaderCell.textContent = "Operator";
+            operatorHeaderRow.appendChild(operatorHeaderCell);
+
+            var gadgetHeaderCell = document.createElement("th");
+            gadgetHeaderCell.textContent = "Gadget";
+            operatorHeaderRow.appendChild(gadgetHeaderCell);
+
+            operatorTbody.appendChild(operatorHeaderRow);
+
+            // Create the operator data row
+            var operatorDataRow = document.createElement("tr");
+
+            var operatorNameCell = document.createElement("td");
+            operatorNameCell.textContent = data["Operator Name"];
+            operatorDataRow.appendChild(operatorNameCell);
+
+            var gadgetNameCell = document.createElement("td");
+            gadgetNameCell.textContent = data["Gadget Name"];
+            operatorDataRow.appendChild(gadgetNameCell);
+
+            operatorTbody.appendChild(operatorDataRow);
+
+            operatorTable.appendChild(operatorTbody);
+
+            // Create the weapons table
+            var weaponsTable = document.createElement("table");
+            var weaponsTbody = document.createElement("tbody");
+
+            var headers = ["Weapon", "Scope", "Barrel", "Under Barrel"];
+
+            var headerRow = document.createElement("tr");
+            for (var i = 0; i < headers.length; i++) {
+                var th = document.createElement("th");
+                th.textContent = headers[i];
+                headerRow.appendChild(th);
+            }
+            weaponsTbody.appendChild(headerRow);
+
+            var weapons = ["Primary", "Secondary"];
+            for (var i = 0; i < weapons.length; i++) {
+                var weaponRow = document.createElement("tr");
+
+                var weaponNameCell = document.createElement("td");
+                weaponNameCell.textContent = data[weapons[i]];
+                weaponRow.appendChild(weaponNameCell);
+
+                var attributes = ["Scope", "Barrel", "Under Barrel"];
+                for (var j = 0; j < attributes.length; j++) {
+                    var attributeCell = document.createElement("td");
+                    attributeCell.textContent = data[weapons[i] + " " + attributes[j]];
+                    weaponRow.appendChild(attributeCell);
+                }
+
+                weaponsTbody.appendChild(weaponRow);
+            }
+
+            weaponsTable.appendChild(weaponsTbody);
+
+            // Append both tables to the resultDiv
+            resultDiv.appendChild(operatorTable);
+            resultDiv.appendChild(weaponsTable);
+        });
+}
+*/
+
+</script>
+
+</html>

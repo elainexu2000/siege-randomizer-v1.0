@@ -7,6 +7,15 @@ ATTACKERS = tuple([cls() for cls in Attacker.__subclasses__()])
 DEFENDERS = tuple([cls() for cls in Defender.__subclasses__()])
 ALL_OPERATORS = ATTACKERS + DEFENDERS
 
+def get_random_attacker():
+    return choice(ATTACKERS)
+
+def get_random_defender():
+    return choice(DEFENDERS)
+
+def get_random_operator():
+    return choice(ALL_OPERATORS)
+
 def print_loadout_cmd(loadout):
     """
         Formats and prints a loadout dictionary suitable for displaying in command prompt

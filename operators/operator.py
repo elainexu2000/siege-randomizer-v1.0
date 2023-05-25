@@ -34,11 +34,20 @@ class Operator:
         else:
             self.secondaries.append(weapon)
     
+    ###TODO: change this implementation
     def get_random_loadout(self):
         """
         Returns a random loadout in the form of a dictionary with key = element type and value = element identity
         """
+
+        """
         loadout = {}
+        loadout["Primary Weapon"] = {}
+        loadout["Secondary Weapon"] = {}
+        return loadout
+        """
+        loadout = {}
+        loadout["Operator Name"] = self.name
         primary = choice(self.primaries)
         loadout["Primary"] = str(primary)
         loadout["Primary Grip"] = choice(primary.grips)
@@ -51,9 +60,9 @@ class Operator:
         loadout["Secondary Barrel"] = choice(secondary.barrels)
         loadout["Secondary Scope"] = choice(secondary.scopes)
         loadout["Secondary Under Barrel"] = choice(secondary.under_barrels)
-        loadout["Gadget"] = str(choice(self.gadgets))
+        loadout["Gadget Name"] = str(choice(self.gadgets))
         return loadout
-
+        
 
         
 
