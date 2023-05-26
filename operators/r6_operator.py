@@ -17,7 +17,7 @@ class Operator:
         self.gadgets = []
         self.primaries = []
         self.secondaries = []
-        self.image_path = Operator.BASE_DIR
+        self.image_path = Operator.BASE_DIR + self.name + '.png'
     
     def __str__(self):
         return self.name
@@ -36,9 +36,6 @@ class Operator:
             self.primaries.append(weapon)
         else:
             self.secondaries.append(weapon)
-    
-    def add_path_to_icon(self):
-        self.image_path += self.name + '.png'
 
     ###TODO: change this implementation
     def get_random_loadout(self):

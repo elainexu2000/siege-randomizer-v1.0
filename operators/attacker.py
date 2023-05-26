@@ -13,7 +13,6 @@ from weapons.hand_cannon import *
 class Attacker(Operator):
     def __init__(self, name):
         super().__init__(name, side = "Attack")
-        self.add_path_to_icon()
 
 class Ash(Attacker):
     def __init__(self):

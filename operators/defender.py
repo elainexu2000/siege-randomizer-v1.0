@@ -12,8 +12,7 @@ from weapons.submachine_gun import *
 class Defender(Operator):
     def __init__(self, name):
         super().__init__(name, side = "Defend")
-        self.add_path_to_icon()
-
+        
 class Pulse(Defender):
     def __init__(self):
         super().__init__("Pulse")
