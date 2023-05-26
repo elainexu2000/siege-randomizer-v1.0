@@ -44,3 +44,8 @@ def display_available_gadgets_and_weapons(option):
             print("      ", weapon, ": ", weapon.scopes[-1], sep = '')
         for weapon in operator.secondaries:
             print("      ", weapon, ": ", weapon.scopes[-1], sep = '')
+
+
+if __name__ == "__main__":
+    for op in ALL_OPERATORS:
+        print(op.image_path)
