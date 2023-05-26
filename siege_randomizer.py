@@ -16,10 +16,6 @@ def get_random_defender():
 def get_random_operator():
     return choice(ALL_OPERATORS)
 
-def print_paths():
-    for op in ALL_OPERATORS:
-        print(op.image_path)
-
 def print_loadout_cmd(loadout):
     """
         Formats and prints a loadout dictionary suitable for displaying in command prompt
@@ -35,31 +31,6 @@ def print_loadout_cmd(loadout):
     print("         Barrel:      ", loadout["Secondary Barrel"])
     print("         Scope:       ", loadout["Secondary Scope"])
     print("         Under Barrel:", loadout["Secondary Under Barrel"])
-
-def display_available_gadgets_and_weapons(option):
-    """
-        Helper function that prints all available secondary gadgets and weapons (alongside with the scope of max magnification) for all operators in the designated category:
-        option = 1: attackers
-        option = 2: defenders
-        option = 0 (or any other value): all operators
-    """
-    candidates = []
-    if option == 1:
-        candidates = ATTACKERS
-    elif option == 2:
-        candidates = DEFENDERS
-    else:
-        candidates = ALL_OPERATORS
-    
-    for operator in candidates:
-        print(operator, ": ", sep = '' ,end = '')
-        for gadget in operator.gadgets:
-            print(gadget, ";", sep = '' ,end = ' ')
-        print()
-        for weapon in operator.primaries:
-            print("      ", weapon, ": ", weapon.scopes[-1], sep = '')
-        for weapon in operator.secondaries:
-            print("      ", weapon, ": ", weapon.scopes[-1], sep = '')
 
 def main():
     while(True):
@@ -99,7 +70,6 @@ def main():
             print("Invalid choice. Redirecting to home...")
 
 if __name__ == "__main__":
-    #display_available_gadgets_and_weapons(3)
-    #main()
-    print_paths()
+    main()
+    
 
