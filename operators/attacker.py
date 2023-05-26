@@ -1,4 +1,4 @@
-from operators.operator import Operator
+from operators.r6_operator import Operator
 from gadgets.gadget import *
 from weapons.assault_rifle import *
 from weapons.handgun import *
@@ -13,6 +13,7 @@ from weapons.hand_cannon import *
 class Attacker(Operator):
     def __init__(self, name):
         super().__init__(name, side = "Attack")
+        self.add_path_to_icon()
 
 class Ash(Attacker):
     def __init__(self):
@@ -22,7 +23,7 @@ class Ash(Attacker):
         self.add_weapon(USG57(),False)
         self.add_weapon(M45_MEUSOC(),False)
         self.add_gadget(Claymore())
-        self.add_gadget(Breach_Charge())
+        self.add_gadget(Breach_Charge())     
 
 class Thermite(Attacker):
     def __init__(self):
@@ -74,7 +75,7 @@ class Blitz(Attacker):
 
 class Twitch(Attacker):
     def __init__(self):
-        super().__init__("Twitch")
+        super().__init__("Twitch") 
         self.add_weapon(F2())
         self.add_weapon(SG_CQB())
         self.add_weapon(M417())
@@ -105,7 +106,7 @@ class Glaz(Attacker):
         
 class Fuze(Attacker):
     def __init__(self):
-        super().__init__("Fuze")
+        super().__init__("Fuze") 
         self.add_weapon(AK_12())
         self.add_weapon(LMG_6P41())
         self.add_weapon(Ballistic_Shield())
@@ -137,7 +138,7 @@ class Blackbeard(Attacker):
 
 class Capitao(Attacker):
     def __init__(self):
-        super().__init__("Capitao")
+        super().__init__("Capitao") 
         self.add_weapon(Para_308())
         self.add_weapon(M249())
         self.add_weapon(PRB92(), False)
@@ -157,7 +158,7 @@ class Hibana(Attacker):
 
 class Jackal(Attacker):
     def __init__(self):
-        super().__init__("Jackal")
+        super().__init__("Jackal")  
         self.add_weapon(C7E())
         self.add_weapon(PDW9(1.5))
         self.add_weapon(ITA12L())

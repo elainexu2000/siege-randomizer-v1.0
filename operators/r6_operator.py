@@ -7,13 +7,17 @@ class Operator:
         gadgets: set of all available gadgets
         primaries: set of all available primary weapons
         secondaries: set of all available secondary weapons
+        image_path: path to operator icon
     """
+    BASE_DIR = "../assets/operators/icons/"
+
     def __init__(self, name, side):
         self.name = name
         self.side = side
         self.gadgets = []
         self.primaries = []
         self.secondaries = []
+        self.image_path = Operator.BASE_DIR
     
     def __str__(self):
         return self.name
@@ -21,7 +25,6 @@ class Operator:
     def add_gadget(self, gadget):
         if self.side != gadget.side:
             print("Side mismatch: ", str(gadget), "is not", self.side, "specific")
-            # raise ValueError 
         else:
             self.gadgets.append(gadget)
 
@@ -34,6 +37,9 @@ class Operator:
         else:
             self.secondaries.append(weapon)
     
+    def add_path_to_icon(self):
+        self.image_path += self.name + '.png'
+
     ###TODO: change this implementation
     def get_random_loadout(self):
         """
@@ -63,6 +69,10 @@ class Operator:
         loadout["Gadget Name"] = str(choice(self.gadgets))
         return loadout
         
+if __name__ == '__main__':
+    o1 = Operator('Ash', 'Attack')
+    o1.add_path_to_icon()
+    print(o1.image_path)
 
         
 

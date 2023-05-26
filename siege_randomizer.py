@@ -16,6 +16,10 @@ def get_random_defender():
 def get_random_operator():
     return choice(ALL_OPERATORS)
 
+def print_paths():
+    for op in ALL_OPERATORS:
+        print(op.image_path)
+
 def print_loadout_cmd(loadout):
     """
         Formats and prints a loadout dictionary suitable for displaying in command prompt
@@ -96,5 +100,6 @@ def main():
 
 if __name__ == "__main__":
     #display_available_gadgets_and_weapons(3)
-    main()
+    #main()
+    print_paths()
 

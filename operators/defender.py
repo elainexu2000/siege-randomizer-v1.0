@@ -1,4 +1,4 @@
-from operators.operator import Operator
+from operators.r6_operator import Operator
 from gadgets.gadget import *
 from weapons.assault_rifle import *
 from weapons.handgun import *
@@ -12,6 +12,7 @@ from weapons.submachine_gun import *
 class Defender(Operator):
     def __init__(self, name):
         super().__init__(name, side = "Defend")
+        self.add_path_to_icon()
 
 class Pulse(Defender):
     def __init__(self):
