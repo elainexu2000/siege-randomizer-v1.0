@@ -1,4 +1,8 @@
 class Scope:
+    """ Attributes:
+        name: (string) name of the scope
+        image_path: relative path to image
+    """
     BASE_DIR = "../assets/sights/"
     def __init__(self, name):
         self.name = name
@@ -59,3 +63,8 @@ class Scope_25x(Scope):
 class Scope_30x(Scope):
     def __init__(self):
         super().__init__("3.0x")
+
+if __name__ == "__main__":
+    scopes = [cls() for cls in Scope.__subclasses__()]
+    for s in scopes:
+        print(s.image_path)
