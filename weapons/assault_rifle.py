@@ -4,9 +4,11 @@ class AssaultRifle(Weapon):
     GRIPS = Weapon.GRIPS
     BARRELS = ["None", "Suppressor", "Compensator", "Flash Hider", "Muzzle Break"]
     UNDER_BARRELS = Weapon.UNDER_BARRELS
+    BASE_DIR = "../assets/weapons/assault_rifles/"
 
     def __init__(self, name, grips = GRIPS, barrels = BARRELS, under_barrels = UNDER_BARRELS, max_magnification = 1.0):
         super().__init__(name, grips, barrels, under_barrels, max_magnification)
+        self.image_path = AssaultRifle.BASE_DIR + type(self).__name__ + ".png"
 
 from weapons.assault_rifle import AssaultRifle as AR
 
@@ -109,3 +111,8 @@ class AR_416_C_CARBINE(AR):
 class COMMANDO_9(AR):
     def __init__(self):
         super().__init__("Commando 9", barrels = AR.BARRELS + ["Extended Barrel"], max_magnification = 1.0)
+    
+if __name__ == "__main__":
+        ars = [cls() for cls in AR.__subclasses__()]
+        for ar in ars:
+            print(ar.image_path)
