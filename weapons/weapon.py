@@ -5,7 +5,7 @@ class Weapon:
         barrels: available barrels (including None)
         scopes: available scopes (including None)
         under_barrel: available under barrels (including None)
-        image: relative path to weapon's image representation
+        image_path: relative path to weapon's image representation
     """
     """
         Ubisoft's balancing strategies for Rainbow Six Siege involve controlling access to 
@@ -51,5 +51,7 @@ class Weapon:
         Postcondition: returns the weapon name as displayed in game (not necessarily  identical to class name)
         """
         return self.name
+    
+    
 
         
