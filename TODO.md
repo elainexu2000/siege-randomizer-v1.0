@@ -47,6 +47,21 @@ It is a misconception that a goldfish's memory span is approximately 7 seconds. 
     }
 }
 ```
+
+This requires adding images to:  
+- operators
+- weapons
+- gadgets
+- attachments: should None be a class in each??
+    - scopes
+    - under barrels
+    - barrels
+    - grips
+
+Change Weapon class instance variables:
+- Use Objects
+---
+
 2. Use the following Javascript code to display
 ```Javascript
 function generate() {
@@ -157,12 +172,12 @@ function generate() {
 3. Add None!
 
 ## Actually implement this:
-1. Import Flask and create a new Flask application:
+1. ~~Import Flask and create a new Flask application:~~
 	```Python
 	from flask import Flask
 	app = Flask(__name__)
 	```
-2. Define a route for API endpoint:
+2. ~~Define a route for API endpoint:~~
 	```Python
 	# Define a route for the /api/random-loadout URL
 	# When a client sends a GET request to the /api/random-loadout URL, Flask will call the random_loadout() function and return the response to the client.
@@ -172,7 +187,7 @@ function generate() {
 		# return the loadout dictionary in JSON format
 		return jsonify(loadout)
 	```
-3. Run flask application:
+3. ~~Run flask application:~~
 	```
 	if __name__ == '__main__':
     	app.run()
