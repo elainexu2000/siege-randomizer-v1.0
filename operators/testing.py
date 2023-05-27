@@ -47,5 +47,12 @@ def display_available_gadgets_and_weapons(option):
 
 
 if __name__ == "__main__":
+    """
+    glaz = Glaz()
+    attacker = Attacker("name")
+    print(type(glaz).__name__)
+    print(type(attacker).__name__)
+    """
     for op in ALL_OPERATORS:
         print(op.image_path)
+    

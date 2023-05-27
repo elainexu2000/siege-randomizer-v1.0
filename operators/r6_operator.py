@@ -17,7 +17,7 @@ class Operator:
         self.gadgets = []
         self.primaries = []
         self.secondaries = []
-        self.image_path = Operator.BASE_DIR + self.name + '.png'
+        self.image_path = Operator.BASE_DIR + type(self).__name__ + '.png'
     
     def __str__(self):
         return self.name
