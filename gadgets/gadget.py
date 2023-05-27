@@ -2,10 +2,18 @@ class Gadget:
     """ Attributes:
         name: (string) name of the gadget
         side: in ["Attack", "Defend"]
+        image_path: relative path to image
     """
+    BASE_DIR = "../assets/gadgets/"
     def __init__(self, name, is_attacker_specific):
         self.name = name
-        self.side = "Attack" if is_attacker_specific else "Defend"
+        if is_attacker_specific:
+            self.side = "Attack"
+            self.image_path = Gadget.BASE_DIR + "attacker_gadgets/"
+        else:
+            self.side = "Defend"
+            self.image_path = Gadget.BASE_DIR + "defender_gadgets/"
+        self.image_path += type(self).__name__ + ".png"
     
     def __str__(self):
         return self.name
@@ -61,3 +69,8 @@ class Proximity_Alarm(Gadget):
 class Impact_Grenade(Gadget):
     def __init__(self):
         super().__init__("Impact Grenade", False)
+
+if __name__ == "__main__":
+    gs = [cls() for cls in Gadget.__subclasses__()]
+    for g in gs:
+        print(g.image_path)
