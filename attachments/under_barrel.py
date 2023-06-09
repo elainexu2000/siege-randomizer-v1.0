@@ -11,3 +11,8 @@ class Under_Barrel:
 class Laser(Under_Barrel):
     def __init__(self):
         super().__init__("Laser")
+
+class No_Under_Barrel(Under_Barrel):
+    def __init__(self):
+        super().__init__("None")
+        self.image_path = "../assets/None.png"
