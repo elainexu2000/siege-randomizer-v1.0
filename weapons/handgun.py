@@ -1,12 +1,18 @@
 from weapons.weapon import Weapon
+from attachments.scope import *
+from attachments.barrel import *
+from attachments.grip import *
+from attachments.under_barrel import *
 
 class Handgun(Weapon):
-    GRIPS = ["None"]
-    BARRELS = ["None", "Suppressor", "Muzzle Break"]
+    GRIPS = [No_Grip,]
+    BARRELS = [No_Barrel, Suppressor, Muzzle_Break,]
     UNDER_BARRELS = Weapon.UNDER_BARRELS
+    BASE_DIR = "../assets/weapons/handguns/"
 
     def __init__(self, name, grips = GRIPS, barrels = BARRELS, under_barrels = UNDER_BARRELS, max_magnification = 0):
         super().__init__(name, grips, barrels, under_barrels, max_magnification)
+        self.image_path = Handgun.BASE_DIR + type(self).__name__ + ".png"
 
 class M45_MEUSOC(Handgun):
     def __init__(self):
@@ -26,7 +32,7 @@ class P9(Handgun):
 
 class LFP586(Handgun):
     def __init__(self):
-        super().__init__("LFP586", barrels=["None"])
+        super().__init__("LFP586", barrels = [No_Barrel,])
 
 class PMM(Handgun):
     def __init__(self):
@@ -54,7 +60,7 @@ class PRB92(Handgun):
 
 class LUISON(Handgun):
     def __init__(self):
-        super().__init__("LUISON", barrels = ["Suppressor"])
+        super().__init__("LUISON", barrels = [Suppressor,])
         
 class P229(Handgun):
     def __init__(self):
@@ -78,7 +84,7 @@ class H_1911_TACOPS(Handgun):
 
 class H_44_Mag_Semi_Auto(Handgun):
     def __init__(self):
-        super().__init__(".44 Mag Semi-Auto", barrels=["None"])
+        super().__init__(".44 Mag Semi-Auto", barrels = [No_Barrel,])
 
 class SDP_9mm(Handgun):
     def __init__(self):
@@ -91,3 +97,12 @@ class KERATOS_357(Handgun):
 class P_10C(Handgun):
     def __init__(self):
         super().__init__("P-10C")
+
+if __name__ == "__main__":
+    hgs = [cls() for cls in Handgun.__subclasses__()]
+    for hg in hgs:
+        print(hg.image_path)
+        print(hg.scopes)
+        print(hg.grips)
+        print(hg.barrels)
+        print(hg.under_barrels)

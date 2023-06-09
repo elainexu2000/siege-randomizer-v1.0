@@ -1,8 +1,12 @@
 from weapons.weapon import Weapon
+from attachments.scope import *
+from attachments.barrel import *
+from attachments.grip import *
+from attachments.under_barrel import *
 
 class AssaultRifle(Weapon):
     GRIPS = Weapon.GRIPS
-    BARRELS = ["None", "Suppressor", "Compensator", "Flash Hider", "Muzzle Break"]
+    BARRELS = [No_Barrel, Suppressor, Compensator, Flash_Hider, Muzzle_Break]
     UNDER_BARRELS = Weapon.UNDER_BARRELS
     BASE_DIR = "../assets/weapons/assault_rifles/"
 
@@ -14,11 +18,11 @@ from weapons.assault_rifle import AssaultRifle as AR
 
 class R4C(AR):
     def __init__(self):
-        super().__init__("R4-C", barrels = AR.BARRELS + ["Extended Barrel"])
+        super().__init__("R4-C", barrels = AR.BARRELS + [Extended_Barrel,])
 
 class G36C(AR):
     def __init__(self, updated_mag = 1.5):
-        super().__init__("G36C", barrels = AR.BARRELS + ["Extended Barrel"], max_magnification = updated_mag)
+        super().__init__("G36C", barrels = AR.BARRELS + [Extended_Barrel,], max_magnification = updated_mag)
 
 class L85A2(AR):
     def __init__(self, updated_mag = 2.0):
@@ -34,7 +38,7 @@ class AR_556XI(AR):
 
 class F2(AR):
     def __init__(self):
-        super().__init__("F2", barrels = AR.BARRELS + ["Extended Barrel"], max_magnification = 1.5)
+        super().__init__("F2", barrels = AR.BARRELS + [Extended_Barrel,], max_magnification = 1.5)
         
 class AK_12(AR):
     def __init__(self, updated_mag = 2.5):
@@ -42,23 +46,23 @@ class AK_12(AR):
 
 class AUG_A2(AR):
     def __init__(self, updated_mag = 2.5):
-        super().__init__("AUG A2", grips = ["None"], max_magnification = updated_mag)
+        super().__init__("AUG A2", grips = [No_Grip,], max_magnification = updated_mag)
 
 class AR_552_Commando(AR):
     def __init__(self, updated_mag = 2.0):
-        super().__init__("552 Commando", barrels = AR.BARRELS + ["Extended Barrel"], max_magnification = updated_mag)
+        super().__init__("552 Commando", barrels = AR.BARRELS + [Extended_Barrel,], max_magnification = updated_mag)
 
 class C8_SFW(AR):
     def __init__(self):
-        super().__init__("C8-SFW", grips = ["None"], barrels = AR.BARRELS + ["Extended Barrel"], max_magnification = 1.5)
+        super().__init__("C8-SFW", grips = [No_Grip,], barrels = AR.BARRELS + [Extended_Barrel,], max_magnification = 1.5)
 
 class MK17_CQB(AR):
     def __init__(self):
-        super().__init__("MK17 CQB", barrels = AR.BARRELS + ["Extended Barrel"], max_magnification= 2.0)
+        super().__init__("MK17 CQB", barrels = AR.BARRELS + [Extended_Barrel,], max_magnification= 2.0)
 
 class Para_308(AR):
     def __init__(self, updated_mag = 2.0):
-        super().__init__("Para-308", barrels = AR.BARRELS + ["Extended Barrel"], max_magnification= updated_mag)
+        super().__init__("Para-308", barrels = AR.BARRELS + [Extended_Barrel,], max_magnification= updated_mag)
 
 class Type_89(AR):
     def __init__(self):
@@ -78,15 +82,15 @@ class V308(AR):
 
 class SPEAR_308(AR):
     def __init__(self, updated_mag = 2.0):
-        super().__init__("SPEAR.308", barrels = AR.BARRELS + ["Extended Barrel"], max_magnification = updated_mag)
+        super().__init__("SPEAR.308", barrels = AR.BARRELS + [Extended_Barrel,], max_magnification = updated_mag)
 
 class M4(AR):
     def __init__(self):
-        super().__init__("M4", barrels = AR.BARRELS + ["Extended Barrel"], max_magnification= 2.0)
+        super().__init__("M4", barrels = AR.BARRELS + [Extended_Barrel,], max_magnification= 2.0)
 
 class AK_74M(AR):
     def __init__(self):
-        super().__init__("AK-74M", grips = ["None"], max_magnification = 2.5)
+        super().__init__("AK-74M", grips = [No_Grip,], max_magnification = 2.5)
 
 class ARX200(AR):
     def __init__(self, updated_mag = 2.0):
@@ -94,25 +98,30 @@ class ARX200(AR):
 
 class F90(AR):
     def __init__(self):
-        super().__init__("F90", barrels = AR.BARRELS + ["Extended Barrel"], max_magnification = 2.5)
+        super().__init__("F90", barrels = AR.BARRELS + [Extended_Barrel,], max_magnification = 2.5)
 
 class SC3000K(AR):
     def __init__(self):
-        super().__init__("SC3000K", barrels = AR.BARRELS + ["Extended Barrel"], max_magnification= 2.0)
+        super().__init__("SC3000K", barrels = AR.BARRELS + [Extended_Barrel,], max_magnification= 2.0)
 
 class POF_9(AR):
     def __init__(self):
-        super().__init__("POF-9", barrels = AR.BARRELS + ["Extended Barrel"], max_magnification = 2.5)
+        super().__init__("POF-9", barrels = AR.BARRELS + [Extended_Barrel,], max_magnification = 2.5)
 
 class AR_416_C_CARBINE(AR):
     def __init__(self):
-        super().__init__("416-C CARBINE", barrels = AR.BARRELS + ["Extended Barrel"], max_magnification = 1.0)
+        super().__init__("416-C CARBINE", barrels = AR.BARRELS + [Extended_Barrel,], max_magnification = 1.0)
 
 class COMMANDO_9(AR):
     def __init__(self):
-        super().__init__("Commando 9", barrels = AR.BARRELS + ["Extended Barrel"], max_magnification = 1.0)
+        super().__init__("Commando 9", barrels = AR.BARRELS + [Extended_Barrel,], max_magnification = 1.0)
     
 if __name__ == "__main__":
-        ars = [cls() for cls in AR.__subclasses__()]
-        for ar in ars:
-            print(ar.image_path)
+    print(AssaultRifle.BARRELS)
+    ars = [cls() for cls in AR.__subclasses__()]
+    for ar in ars:
+        print(ar.image_path)
+        print(ar.scopes)
+        print(ar.grips)
+        print(ar.barrels)
+        print(ar.under_barrels)

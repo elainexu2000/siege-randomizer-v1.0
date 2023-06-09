@@ -1,12 +1,18 @@
 from weapons.weapon import Weapon
+from attachments.scope import *
+from attachments.barrel import *
+from attachments.grip import *
+from attachments.under_barrel import *
 
 class Shotgun(Weapon):
-    GRIPS = ["None"]
-    BARRELS = ["None"]
+    GRIPS = [No_Grip,]
+    BARRELS = [No_Barrel,]
     UNDER_BARRELS = Weapon.UNDER_BARRELS
+    BASE_DIR = "../assets/weapons/shotguns/"
 
     def __init__(self, name, grips = GRIPS, barrels = BARRELS, under_barrels = UNDER_BARRELS, max_magnification = 1):
         super().__init__(name, grips, barrels, under_barrels, max_magnification)
+        self.image_path = Shotgun.BASE_DIR + type(self).__name__ + ".png"
 
 class M590A1(Shotgun):
     def __init__(self):
@@ -18,11 +24,11 @@ class M1014(Shotgun):
 
 class SG_CQB(Shotgun):
     def __init__(self):
-        super().__init__("SG-CQB", grips = Shotgun.GRIPS + ["Vertical Grip"])
+        super().__init__("SG-CQB", grips = Shotgun.GRIPS + [Vertical_Grip,])
 
 class SUPERNOVA(Shotgun):
     def __init__(self):
-        super().__init__("SUPERNOVA", barrels = Shotgun.BARRELS + ["Suppressor"])
+        super().__init__("SUPERNOVA", barrels = Shotgun.BARRELS + [Suppressor,])
 
 class ITA12L(Shotgun):
     def __init__(self):
@@ -34,7 +40,7 @@ class ITA12S(Shotgun):
 
 class SIX12_SD(Shotgun):
     def __init__(self):
-        super().__init__("SIX12 SD", barrels = ["Suppressor"])
+        super().__init__("SIX12 SD", barrels = [Suppressor,])
 
 class BOSG_12_2(Shotgun):
     def __init__(self):
@@ -42,7 +48,7 @@ class BOSG_12_2(Shotgun):
 
 class SASG_12(Shotgun):
     def __init__(self):
-        super().__init__("SASG-12", grips = Weapon.GRIPS, barrels = Shotgun.BARRELS + ["Suppressor"])
+        super().__init__("SASG-12", grips = Weapon.GRIPS, barrels = Shotgun.BARRELS + [Suppressor,])
 
 class SUPER_SHORTY(Shotgun):
     def __init__(self):
@@ -70,7 +76,7 @@ class SPAS_15(Shotgun):
 
 class FO_12(Shotgun):
     def __init__(self):
-        super().__init__("FO-12", grips = Weapon.GRIPS, barrels = Shotgun.BARRELS + ["Suppressor", "Extended Barrel"])
+        super().__init__("FO-12", grips = Weapon.GRIPS, barrels = Shotgun.BARRELS + [Suppressor, Extended_Barrel,])
 
 class ACS12(Shotgun):
     def __init__(self, updated_mag = 2.0):
@@ -78,5 +84,13 @@ class ACS12(Shotgun):
 
 class TCSG12(Shotgun):
     def __init__(self):
-        super().__init__("TCSG12", grips = Weapon.GRIPS, barrels = Shotgun.BARRELS + ["Suppressor"], max_magnification = 2.0)
+        super().__init__("TCSG12", grips = Weapon.GRIPS, barrels = Shotgun.BARRELS + [Suppressor,], max_magnification = 2.0)
 
+if __name__ == "__main__":
+    hgs = [cls() for cls in Shotgun.__subclasses__()]
+    for hg in hgs:
+        print(hg.image_path)
+        print(hg.scopes)
+        print(hg.grips)
+        print(hg.barrels)
+        print(hg.under_barrels)
