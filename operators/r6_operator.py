@@ -37,39 +37,43 @@ class Operator:
         else:
             self.secondaries.append(weapon)
 
-    ###TODO: change this implementation
+    def create_subdictionary(loadout, obj, entity_name):
+        loadout[entity_name] = {}
+        loadout[entity_name]["Name"] = obj.name
+        loadout[entity_name]["Image"] = obj.image_path
+
+    def add_randomized_weapon(loadout, weapon, is_primary):
+        name = "Primary" if is_primary else "Secondary"
+        Operator.create_subdictionary(loadout, weapon, name)
+        scope_class = choice(weapon.scopes)
+        scope = scope_class()
+        Operator.create_subdictionary(loadout[name], scope, "Scope")
+        barrel_class = choice(weapon.barrels)
+        barrel = barrel_class()
+        Operator.create_subdictionary(loadout[name], barrel, "Barrel")
+        under_barrel_class = choice(weapon.under_barrels)
+        under_barrel = under_barrel_class()
+        Operator.create_subdictionary(loadout[name], under_barrel, "Under Barrel")
+
     def get_random_loadout(self):
         """
-        Returns a random loadout in the form of a dictionary with key = element type and value = element identity
+        Returns a random loadout in the form of a nested dictionary
         """
+        loadout = {}
+        Operator.create_subdictionary(loadout, self, "Operator")
+        gadget = choice(self.gadgets)
+        Operator.create_subdictionary(loadout, gadget, "Gadget")
 
-        """
-        loadout = {}
-        loadout["Primary Weapon"] = {}
-        loadout["Secondary Weapon"] = {}
-        return loadout
-        """
-        loadout = {}
-        loadout["Operator Name"] = self.name
         primary = choice(self.primaries)
-        loadout["Primary"] = str(primary)
-        loadout["Primary Grip"] = choice(primary.grips)
-        loadout["Primary Barrel"] = choice(primary.barrels)
-        loadout["Primary Scope"] = choice(primary.scopes)
-        loadout["Primary Under Barrel"] = choice(primary.under_barrels)
+        Operator.add_randomized_weapon(loadout, primary, is_primary=True)
         secondary = choice(self.secondaries)
-        loadout["Secondary"] = str(secondary)
-        loadout["Secondary Grip"] = choice(secondary.grips)
-        loadout["Secondary Barrel"] = choice(secondary.barrels)
-        loadout["Secondary Scope"] = choice(secondary.scopes)
-        loadout["Secondary Under Barrel"] = choice(secondary.under_barrels)
-        loadout["Gadget Name"] = str(choice(self.gadgets))
+        Operator.add_randomized_weapon(loadout, secondary, is_primary=False)
         return loadout
-        
+
 if __name__ == '__main__':
-    o1 = Operator('Ash', 'Attack')
-    o1.add_path_to_icon()
-    print(o1.image_path)
-
-        
-
+    r = Operator("Recruit", "Attack")
+    
+    loadout = {}
+    Operator.create_subdictionary(loadout, r, "Primary")
+    Operator.create_subdictionary(loadout["Primary"], r, "Scope")
+    print(loadout)
