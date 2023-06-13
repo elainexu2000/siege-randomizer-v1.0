@@ -4,7 +4,7 @@ class Gadget:
         side: in ["Attack", "Defend"]
         image_path: relative path to image
     """
-    BASE_DIR = "../assets/gadgets/"
+    BASE_DIR = "../../assets/gadgets/"
     def __init__(self, name, is_attacker_specific):
         self.name = name
         if is_attacker_specific:
@@ -69,6 +69,10 @@ class Proximity_Alarm(Gadget):
 class Impact_Grenade(Gadget):
     def __init__(self):
         super().__init__("Impact Grenade", False)
+
+class Observation_Blocker(Gadget):
+    def __init__(self):
+        super().__init__("Observation Blocker", False)
 
 if __name__ == "__main__":
     gs = [cls() for cls in Gadget.__subclasses__()]

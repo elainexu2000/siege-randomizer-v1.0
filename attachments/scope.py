@@ -4,7 +4,7 @@ class Scope:
         image_path: relative path to image
         magnification: in [0, 1, 1.5, 2, 2.5, 3]
     """
-    BASE_DIR = "../assets/sights/"
+    BASE_DIR = "../../assets/sights/"
     def __init__(self, name):
         self.name = name
         self.image_path = Scope.BASE_DIR + type(self).__name__ + ".png"

@@ -346,6 +346,7 @@ class Grim(Attacker):
         self.add_weapon(AR_552_Commando())
         self.add_weapon(SG_CQB())
         self.add_weapon(P229(), False)
+        self.add_weapon(Bailiff_410(), False)
         self.add_gadget(Breach_Charge())
         self.add_gadget(Claymore())
 

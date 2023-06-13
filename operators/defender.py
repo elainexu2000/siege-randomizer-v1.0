@@ -20,8 +20,9 @@ class Pulse(Defender):
         self.add_weapon(UMP45())
         self.add_weapon(USG57(), False)
         self.add_weapon(M45_MEUSOC(), False)
-        self.add_gadget(Barbed_Wire())
+        self.add_gadget(Deployable_Shield())
         self.add_gadget(Nitro_Cell())
+        self.add_gadget(Observation_Blocker())
 
 class Castle(Defender):
     def __init__(self):
@@ -30,7 +31,7 @@ class Castle(Defender):
         self.add_weapon(UMP45())
         self.add_weapon(USG57(), False)
         self.add_weapon(M45_MEUSOC(), False)
-        self.add_weapon(SUPER_SHORTY())
+        self.add_weapon(SUPER_SHORTY(), False)
         self.add_gadget(Proximity_Alarm())
         self.add_gadget(Bulletproof_Camera())
 
@@ -42,7 +43,7 @@ class Smoke(Defender):
         self.add_weapon(P226MK25(),False)
         self.add_weapon(SMG_11(), False)
         self.add_gadget(Barbed_Wire())
-        self.add_gadget(Deployable_Shield())
+        self.add_gadget(Proximity_Alarm())
 
 class Mute(Defender):
     def __init__(self):
@@ -61,7 +62,7 @@ class Jager(Defender):
         self.add_weapon(AR_416_C_CARBINE())
         self.add_weapon(P12(), False)
         self.add_gadget(Bulletproof_Camera())
-        self.add_gadget(Barbed_Wire())
+        self.add_gadget(Observation_Blocker())
 
 class Bandit(Defender):
     def __init__(self):
@@ -94,6 +95,7 @@ class Rook(Defender):
         self.add_weapon(LFP586(), False)
         self.add_gadget(Impact_Grenade())
         self.add_gadget(Proximity_Alarm())
+        self.add_gadget(Observation_Blocker())
 
 class Kapkan(Defender):
     def __init__(self):
@@ -115,6 +117,7 @@ class Tachanka(Defender):
         self.add_weapon(Bearing_9(), False)
         self.add_gadget(Barbed_Wire())
         self.add_gadget(Deployable_Shield())
+        self.add_gadget(Proximity_Alarm())
 
 class Frost(Defender):
     def __init__(self):
@@ -143,6 +146,7 @@ class Caveira(Defender):
         self.add_weapon(LUISON(), False)
         self.add_gadget(Impact_Grenade())
         self.add_gadget(Proximity_Alarm())
+        self.add_gadget(Observation_Blocker())
 
 class Echo(Defender):
     def __init__(self):
@@ -181,6 +185,7 @@ class Ela(Defender):
         self.add_weapon(RG15(), False)
         self.add_gadget(Deployable_Shield())
         self.add_gadget(Barbed_Wire())
+        self.add_gadget(Observation_Blocker())
 
 class Vigil(Defender):
     def __init__(self):
@@ -201,6 +206,7 @@ class Maestro(Defender):
         self.add_weapon(Bailiff_410(), False)
         self.add_gadget(Barbed_Wire())
         self.add_gadget(Impact_Grenade())
+        self.add_gadget(Observation_Blocker())
 
 class Alibi(Defender):
     def __init__(self):
@@ -209,8 +215,8 @@ class Alibi(Defender):
         self.add_weapon(ACS12())
         self.add_weapon(KERATOS_357(), False)
         self.add_weapon(Bailiff_410(), False)
-        self.add_gadget(Impact_Grenade())
-        self.add_gadget(Deployable_Shield())
+        self.add_gadget(Proximity_Alarm())
+        self.add_gadget(Observation_Blocker())
 
 class Clash(Defender):
     def __init__(self):
@@ -221,6 +227,7 @@ class Clash(Defender):
         self.add_weapon(P_10C(), False)
         self.add_gadget(Impact_Grenade())
         self.add_gadget(Barbed_Wire())
+        self.add_gadget(Deployable_Shield())
 
 class Kaid(Defender):
     def __init__(self):
@@ -231,6 +238,7 @@ class Kaid(Defender):
         self.add_weapon(LFP586(), False)
         self.add_gadget(Nitro_Cell())
         self.add_gadget(Barbed_Wire())
+        self.add_gadget(Observation_Blocker())
 
 class Mozzie(Defender):
     def __init__(self):
@@ -250,6 +258,7 @@ class Warden(Defender):
         self.add_weapon(P_10C(), False)
         self.add_gadget(Nitro_Cell())
         self.add_gadget(Deployable_Shield())
+        self.add_gadget(Observation_Blocker())
 
 class Goyo(Defender):
     def __init__(self):
@@ -257,8 +266,9 @@ class Goyo(Defender):
         self.add_weapon(VECTOR_45_ACP())
         self.add_weapon(TCSG12())
         self.add_weapon(P229(), False)
-        self.add_gadget(Nitro_Cell())
+        self.add_gadget(Bulletproof_Camera())
         self.add_gadget(Proximity_Alarm())
+        self.add_gadget(Impact_Grenade())
 
 class Wamai(Defender):
     def __init__(self):
@@ -305,8 +315,8 @@ class Thunderbird(Defender):
         self.add_weapon(SPAS_15())
         self.add_weapon(Bearing_9(), False)
         self.add_weapon(Q_929(), False)
-        self.add_gadget(Impact_Grenade())
-        self.add_gadget(Nitro_Cell())
+        self.add_gadget(Barbed_Wire())
+        self.add_gadget(Bulletproof_Camera())
 
 class Thorn(Defender):
     def __init__(self):
@@ -334,4 +344,14 @@ class Solis(Defender):
         self.add_weapon(ITA12L())
         self.add_weapon(SMG_11(), False)
         self.add_gadget(Impact_Grenade())
+        self.add_gadget(Bulletproof_Camera())
+
+class Fenrir(Defender):
+    def __init__(self):
+        super().__init__("Fenrir")
+        self.add_weapon(MP7(1.0))
+        self.add_weapon(SASG_12())
+        self.add_weapon(Bailiff_410(), False)
+        self.add_weapon(USG57(), False)
+        self.add_gadget(Barbed_Wire())
         self.add_gadget(Bulletproof_Camera())

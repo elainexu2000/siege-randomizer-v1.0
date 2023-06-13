@@ -9,7 +9,7 @@ class Operator:
         secondaries: set of all available secondary weapons
         image_path: path to operator icon
     """
-    BASE_DIR = "../assets/operators/icons/"
+    BASE_DIR = "../../assets/operators/icons/"
 
     def __init__(self, name, side):
         self.name = name
@@ -17,7 +17,7 @@ class Operator:
         self.gadgets = []
         self.primaries = []
         self.secondaries = []
-        self.image_path = Operator.BASE_DIR + type(self).__name__ + '.png'
+        self.image_path = Operator.BASE_DIR + type(self).__name__.lower() + '.png'
     
     def __str__(self):
         return self.name
