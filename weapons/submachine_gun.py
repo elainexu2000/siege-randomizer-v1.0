@@ -8,7 +8,7 @@ class SubmachineGun(Weapon):
     GRIPS = Weapon.GRIPS
     BARRELS = Weapon.BARRELS
     UNDER_BARRELS = Weapon.UNDER_BARRELS
-    BASE_DIR = "../assets/weapons/submachine_guns/"
+    BASE_DIR = "../static/assets/weapons/submachine_guns/"
 
     def __init__(self, name, grips = GRIPS, barrels = BARRELS, under_barrels = UNDER_BARRELS, max_magnification = 1.0):
         super().__init__(name, grips, barrels, under_barrels, max_magnification)
@@ -74,7 +74,7 @@ class T_5_SMG(SMG):
 
 class SCORPION_EVO_3_A1(SMG):
     def __init__(self):
-        super().__init__("Scorpion EVO 3 A1", barrels = [No_Barrel, Suppressor, Compensator, Flash_Hider, Muzzle_Break,])
+        super().__init__("Scorpion EVO 3 A1", barrels = [No_Barrel, Suppressor, Compensator, Flash_Hider, Muzzle_Brake,])
 
 class K1A(SMG):
     def __init__(self):

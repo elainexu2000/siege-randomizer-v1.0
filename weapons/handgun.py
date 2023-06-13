@@ -6,9 +6,9 @@ from attachments.under_barrel import *
 
 class Handgun(Weapon):
     GRIPS = [No_Grip,]
-    BARRELS = [No_Barrel, Suppressor, Muzzle_Break,]
+    BARRELS = [No_Barrel, Suppressor, Muzzle_Brake,]
     UNDER_BARRELS = Weapon.UNDER_BARRELS
-    BASE_DIR = "../assets/weapons/handguns/"
+    BASE_DIR = "../static/assets/weapons/handguns/"
 
     def __init__(self, name, grips = GRIPS, barrels = BARRELS, under_barrels = UNDER_BARRELS, max_magnification = 0):
         super().__init__(name, grips, barrels, under_barrels, max_magnification)

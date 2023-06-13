@@ -22,12 +22,12 @@ class Weapon:
         all of these magnifications. 
     """
     GRIPS = (No_Grip, Vertical_Grip, Angled_Grip)
-    BARRELS = (No_Barrel, Suppressor, Compensator, Flash_Hider, Extended_Barrel, Muzzle_Break)
+    BARRELS = (No_Barrel, Suppressor, Compensator, Flash_Hider, Extended_Barrel, Muzzle_Brake)
     UNDER_BARRELS = (No_Under_Barrel, Laser)
 
     """
     GRIPS = ("None", "Vertical Grip", "Angled Grip")
-    BARRELS = ("None", "Suppressor", "Compensator", "Flash Hider", "Extended Barrel", "Muzzle Break")
+    BARRELS = ("None", "Suppressor", "Compensator", "Flash Hider", "Extended Barrel", "Muzzle Brake")
     UNDER_BARRELS = ("None", "Laser")
     ONE_TIME = ("None", "Holo A", "Holo B", "Holo C", "Holo D", "Red Dot A", "Red Dot B", "Red Dot C", "Reflex A", "Reflex B", "Reflex C",)
     ONE_PT_FIVE = ("1.5x",)

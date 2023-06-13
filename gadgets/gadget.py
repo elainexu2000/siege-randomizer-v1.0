@@ -4,16 +4,12 @@ class Gadget:
         side: in ["Attack", "Defend"]
         image_path: relative path to image
     """
-    BASE_DIR = "../../assets/gadgets/"
+    #BASE_DIR = "../../assets/gadgets/"
+    BASE_DIR = "../static/assets/gadgets/"
     def __init__(self, name, is_attacker_specific):
         self.name = name
-        if is_attacker_specific:
-            self.side = "Attack"
-            self.image_path = Gadget.BASE_DIR + "attacker_gadgets/"
-        else:
-            self.side = "Defend"
-            self.image_path = Gadget.BASE_DIR + "defender_gadgets/"
-        self.image_path += type(self).__name__ + ".png"
+        self.side = "Attack" if is_attacker_specific else "Defend"
+        self.image_path = Gadget.BASE_DIR + type(self).__name__ + ".png"
     
     def __str__(self):
         return self.name

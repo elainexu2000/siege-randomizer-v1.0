@@ -5,7 +5,7 @@ from attachments.grip import *
 from attachments.under_barrel import *
 
 class Shield(Weapon):
-    BASE_DIR = "../assets/weapons/shields/"
+    BASE_DIR = "../static/assets/weapons/shields/"
     def __init__(self, name, grips = [No_Grip,], barrels = [No_Barrel,], under_barrels = [No_Under_Barrel,], max_magnification = 0):
         super().__init__(name, grips, barrels, under_barrels, max_magnification)
         self.image_path = Shield.BASE_DIR + type(self).__name__ + ".png"

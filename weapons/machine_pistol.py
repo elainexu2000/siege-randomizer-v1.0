@@ -8,7 +8,7 @@ class MachinePistol(Weapon):
     GRIPS = [No_Grip,]
     BARRELS = Weapon.BARRELS
     UNDER_BARRELS = Weapon.UNDER_BARRELS
-    BASE_DIR = "../assets/weapons/machine_pistols/"
+    BASE_DIR = "../static/assets/weapons/machine_pistols/"
 
     def __init__(self, name, grips = GRIPS, barrels = BARRELS, under_barrels = UNDER_BARRELS, max_magnification = 1.0):
         super().__init__(name, grips, barrels, under_barrels, max_magnification)

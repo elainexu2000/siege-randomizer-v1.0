@@ -5,7 +5,7 @@ from attachments.grip import *
 from attachments.under_barrel import *
 
 class HandCannon(Weapon):
-    BASE_DIR = "../assets/weapons/hand_cannons/"
+    BASE_DIR = "../static/assets/weapons/hand_cannons/"
 
     def __init__(self, name):
         super().__init__(name, [No_Grip,], [No_Barrel,], [No_Under_Barrel,], 0)

@@ -6,9 +6,9 @@ from attachments.under_barrel import *
 
 class LightMachineGun(Weapon):
     GRIPS = Weapon.GRIPS
-    BARRELS = [No_Barrel, Compensator, Flash_Hider, Muzzle_Break,]
+    BARRELS = [No_Barrel, Compensator, Flash_Hider, Muzzle_Brake,]
     UNDER_BARRELS = Weapon.UNDER_BARRELS
-    BASE_DIR = "../assets/weapons/light_machine_guns/"
+    BASE_DIR = "../static/assets/weapons/light_machine_guns/"
 
     def __init__(self, name, grips = GRIPS, barrels = BARRELS, under_barrels = UNDER_BARRELS, max_magnification = 2.5):
         super().__init__(name, grips, barrels, under_barrels, max_magnification)

@@ -3,7 +3,7 @@ class Barrel:
         name: (string) name of the barrel
         image_path: relative path to image
     """
-    BASE_DIR = "../../assets/barrels/"
+    BASE_DIR = "../static/assets/barrels/"
     def __init__(self, name):
         self.name = name
         self.image_path = Barrel.BASE_DIR + type(self).__name__ + ".png"
@@ -24,13 +24,13 @@ class Extended_Barrel(Barrel):
     def __init__(self):
         super().__init__("Extended Barrel")
 
-class Muzzle_Break(Barrel):
+class Muzzle_Brake(Barrel):
     def __init__(self):
-        super().__init__("Muzzle Break")
+        super().__init__("Muzzle Brake")
 
 class No_Barrel(Barrel):
     def __init__(self):
         super().__init__("None")
-        self.image_path = "../assets/None.png"
+        self.image_path = "../static/assets/None.png"
 
 
