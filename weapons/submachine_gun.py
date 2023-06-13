@@ -74,7 +74,7 @@ class T_5_SMG(SMG):
 
 class SCORPION_EVO_3_A1(SMG):
     def __init__(self):
-        super().__init__("Sorpion EVO 3 A1", barrels = [No_Barrel, Suppressor, Compensator, Flash_Hider, Muzzle_Break,])
+        super().__init__("Scorpion EVO 3 A1", barrels = [No_Barrel, Suppressor, Compensator, Flash_Hider, Muzzle_Break,])
 
 class K1A(SMG):
     def __init__(self):
