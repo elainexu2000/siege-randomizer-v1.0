@@ -2,7 +2,7 @@
 It is a misconception that a goldfish's memory span is approximately 7 seconds. This idea is often attributed to the belief that goldfish have very short attention spans and forget things quickly. However, scientific research has shown that goldfish can actually retain memories for months and even years.
 
 # NEW:
-1. Rewrite the get_random_loadout function to return both the name and the absolute path to image:
+1. Rewrite the get_random_loadout function to return both the name and the relative path to image:
 ```Python
 {
     "Operator": {
