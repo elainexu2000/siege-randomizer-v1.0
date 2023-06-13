@@ -10,6 +10,8 @@ The Siege Randomizer is a tool that generates a random operator and loadout for 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;See *requirements.txt*  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flask
 
+## Operator icon files are obtained from https://github.com/marcopixel/r6operators
+
 ## Installation Instructions:
 1. Download project:
 
