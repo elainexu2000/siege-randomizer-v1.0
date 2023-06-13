@@ -16,21 +16,23 @@ def get_random_defender():
 def get_random_operator():
     return choice(ALL_OPERATORS)
 
+#####TODO: rewrite this 
 def print_loadout_cmd(loadout):
     """
         Formats and prints a loadout dictionary suitable for displaying in command prompt
     """
-    print("Gadget:", loadout["Gadget"])
-    print("Primary:", loadout["Primary"])
-    print("         Grip:        ", loadout["Primary Grip"])
-    print("         Barrel:      ", loadout["Primary Barrel"])
-    print("         Scope:       ", loadout["Primary Scope"])
-    print("         Under Barrel:", loadout["Primary Under Barrel"])
-    print("Secondary:", loadout["Secondary"])
-    print("         Grip:        ", loadout["Secondary Grip"])
-    print("         Barrel:      ", loadout["Secondary Barrel"])
-    print("         Scope:       ", loadout["Secondary Scope"])
-    print("         Under Barrel:", loadout["Secondary Under Barrel"])
+    print("Operator:", loadout["Operator"]["Name"], ":", loadout["Operator"]["Image"])
+    print("Gadget:", loadout["Gadget"]["Name"], ":", loadout["Gadget"]["Image"])
+
+    print("Primary:", loadout["Primary"]["Name"], ":", loadout["Primary"]["Image"])
+    print("Primary Scope:", loadout["Primary"]["Scope"]["Name"], ":", loadout["Primary"]["Scope"]["Image"])
+    print("Primary Barrel: ", loadout["Primary"]["Barrel"]["Name"], ":", loadout["Primary"]["Barrel"]["Image"])
+    print("Primary Under Barrel: ", loadout["Primary"]["Under Barrel"]["Name"], ":", loadout["Primary"]["Under Barrel"]["Image"])
+
+    print("Secondary: ", loadout["Secondary"]["Name"], ":", loadout["Secondary"]["Image"])
+    print("Secondary Scope:", loadout["Secondary"]["Scope"]["Name"], ":", loadout["Secondary"]["Scope"]["Image"])
+    print("Secondary Barrel: ", loadout["Secondary"]["Barrel"]["Name"], ":", loadout["Secondary"]["Barrel"]["Image"])
+    print("Secondary Under Barrel: ", loadout["Secondary"]["Under Barrel"]["Name"], ":",loadout["Secondary"]["Under Barrel"]["Image"])
 
 def main():
     while(True):
