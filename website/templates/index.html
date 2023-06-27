@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Generate Button</title>
+    <title>Siege Randomizer</title>
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
     <img src="../static/r6_icon.jpg">
     <section>
-        <button onclick="generate()">Generate</button>
+        <button onclick="generate('Attacker')">Attackers</button>
+        <button onclick="generate('Defender')">Defenders</button>
+        <button onclick="generate('All')">All Operators</button>
     </section>
     <div id="result"></div>
 </body>
 <script>
-  function generate() {
-    fetch('/generate')
+  function generate(flag) {
+    let url;
+    if(flag == 'Attacker')
+        url = '/generate_attacker';
+    else if(flag == 'Defender')
+        url = '/generate_defender';
+    else
+        url = '/generate_all';
+    fetch(url)
         .then(response => response.json())
         .then(data => {
             var resultDiv = document.getElementById("result");
@@ -42,7 +52,7 @@
             var gadgetCell = document.createElement("td");
             var gadgetNameImage = document.createElement("img");
             gadgetNameImage.src = data["Gadget"]["Image"];
-            //gadgetNameImage.width = 200;
+            //gadgetNameImage.width = 400;
             gadgetCell.appendChild(gadgetNameImage);
 
             var gadgetNameText = document.createElement("span");
