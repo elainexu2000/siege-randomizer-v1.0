@@ -30,6 +30,7 @@
 
             // Create the operator table
             var operatorTable = document.createElement("table");
+            operatorTable.id = "operator-table";
             var operatorTbody = document.createElement("tbody");
 
             // Create the operator and gadget data row
@@ -39,11 +40,12 @@
             var operatorCell = document.createElement("td");
             var operatorNameImage = document.createElement("img");
             operatorNameImage.src = data["Operator"]["Image"];
-            operatorNameImage.width = 200;
+            operatorNameImage.height = 200;
             operatorCell.appendChild(operatorNameImage);
 
-            var operatorNameText = document.createElement("span");
+            var operatorNameText = document.createElement("div");
             operatorNameText.textContent = data["Operator"]["Name"];
+            operatorNameText.style.verticalAlign = "bottom";
             operatorCell.appendChild(operatorNameText);
 
             dataRow.appendChild(operatorCell);
@@ -52,13 +54,23 @@
             var gadgetCell = document.createElement("td");
             var gadgetNameImage = document.createElement("img");
             gadgetNameImage.src = data["Gadget"]["Image"];
-            //gadgetNameImage.width = 400;
+            gadgetNameImage.addEventListener("load", function(){
+                if (gadgetNameImage.height >= 200) {
+                    gadgetNameImage.height = 200;
+                }
+            });
             gadgetCell.appendChild(gadgetNameImage);
-
-            var gadgetNameText = document.createElement("span");
+            
+            var gadgetNameText = document.createElement("div");
             gadgetNameText.textContent = data["Gadget"]["Name"];
+            //gadgetNameText.style.display = "table-cell";
+            //gadgetNameText.style.verticalAlign = "bottom";
+            //gadgetCell.style.position = "relative";
+            //gadgetNameText.style.position = "absolute";
+            //gadgetNameText.style.bottom = "0";
             gadgetCell.appendChild(gadgetNameText);
-
+            
+            
             dataRow.appendChild(gadgetCell);
 
             operatorTbody.appendChild(dataRow);
@@ -67,6 +79,7 @@
 
             // Create the weapons table
             var weaponsTable = document.createElement("table");
+            weaponsTable.id = "weapon-table";
             var weaponsTbody = document.createElement("tbody");
 
             var headers = ["Weapon", "Scope", "Barrel", "Under Barrel"];
@@ -86,10 +99,12 @@
                 var weaponNameCell = document.createElement("td");
                 var weaponNameImage = document.createElement("img");
                 weaponNameImage.src = data[weapons[i]]["Image"];
+                weaponNameImage.height = 140;
                 weaponNameCell.appendChild(weaponNameImage);
 
-                var weaponNameText = document.createElement("span");
+                var weaponNameText = document.createElement("div");
                 weaponNameText.textContent = data[weapons[i]]["Name"];
+                weaponNameText.style.verticalAlign = "bottom";
                 weaponNameCell.appendChild(weaponNameText);
 
                 weaponRow.appendChild(weaponNameCell);
@@ -100,10 +115,14 @@
 
                     var attributeImage = document.createElement("img");
                     attributeImage.src = data[weapons[i]][attributes[j]]["Image"];
+                    if(attributeImage.height >= 140){
+                        attributeImage.height = 140;
+                    }
                     attributeCell.appendChild(attributeImage);
 
-                    var attributeName = document.createElement("span");
+                    var attributeName = document.createElement("div");
                     attributeName.textContent = data[weapons[i]][attributes[j]]["Name"];
+                    attributeName.style.verticalAlign = "bottom";
                     attributeCell.appendChild(attributeName);
 
                     weaponRow.appendChild(attributeCell);
