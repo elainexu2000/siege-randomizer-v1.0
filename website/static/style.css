@@ -1,0 +1,62 @@
+@font-face {
+    font-family: "ColfaxAI";
+    src: url(https://cdn.openai.com/API/fonts/ColfaxAIRegular.woff2)
+        format("woff2"),
+      url(https://cdn.openai.com/API/fonts/ColfaxAIRegular.woff) format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "ColfaxAI";
+    src: url(https://cdn.openai.com/API/fonts/ColfaxAIBold.woff2) format("woff2"),
+      url(https://cdn.openai.com/API/fonts/ColfaxAIBold.woff) format("woff");
+    font-weight: bold;
+    font-style: normal;
+  }
+  body{
+    font-size: 16px;
+    line-height: 24px;
+    color: #353740;
+    font-family: "ColfaxAI", Helvetica, sans-serif;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+  }
+
+  .head-image {
+    margin-bottom: 20px; /* Adds vertical margin below the image */
+  }
+  
+  .button-section {
+    padding-top: 20px; /* Adds vertical padding above the button section */
+  }
+
+  .button {
+    /* Define your desired styles here */
+    font-family: "ColfaxAI", Helvetica, sans-serif;;
+    font-size: 24px;
+    padding: 10px 20px;
+    background-color: #eaeaea;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .button:hover {
+    /* Define the styles when the button is hovered over */
+    background-color: #f8f5f5;
+    color: #555;
+  }
+  
+  .button:active {
+    /* Define the styles when the button is clicked */
+    background-color: #aaa;
+    color: #fff;
+  }
+
+  table {
+    text-align: center;
+  }
