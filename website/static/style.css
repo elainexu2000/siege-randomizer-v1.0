@@ -24,6 +24,7 @@
     flex-direction: column;
     align-items: center;
     padding-top: 60px;
+    background-color: #a8b0bf;
   }
 
   .head-image {
@@ -32,6 +33,7 @@
   
   .button-section {
     padding-top: 20px; /* Adds vertical padding above the button section */
+    margin-bottom: 20px;
   }
 
   .button {
@@ -59,4 +61,18 @@
 
   table {
     text-align: center;
+    border-collapse: collapse;
+  }
+
+  table, th, td {
+    border: 2px solid rgba(43, 42, 42, 0.687); /* Add a solid black border to the table, table headers, and table cells */
+    padding: 8px; /* Add padding to the table cells for spacing */
+  }
+
+  #operator-table {
+    margin-bottom: 20px; /* Add space below operatorTable */
+  }
+  
+  #weapon-table {
+    margin-top: 20px; /* Add space above weaponsTable */
   }
