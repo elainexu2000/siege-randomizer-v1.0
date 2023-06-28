@@ -58,6 +58,7 @@ def display_available_gadgets_and_weapons(option):
 
 
 if __name__ == "__main__":
+    pass
     """
     glaz = Glaz()
     attacker = Attacker("name")
@@ -66,10 +67,10 @@ if __name__ == "__main__":
     
     for op in ALL_OPERATORS:
         print(op.image_path)
-    """
+    
     a = Ash()
     print(a.get_random_loadout())
-    """{
+    {
         'Operator': {
             'Name': 'Ash', 
             'Image': '../assets/operators/icons/Ash.png'
