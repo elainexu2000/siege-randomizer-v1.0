@@ -1,7 +1,10 @@
 import sys
+import os
 from flask import Flask, redirect, render_template, request, url_for
-sys.path.append("../")
 from siege_randomizer import get_random_operator, get_random_attacker, get_random_defender
+current_folder = os.path.dirname(os.path.abspath(__file__))
+parent_folder = os.path.dirname(current_folder)
+sys.path.append(parent_folder)
 
 app = Flask(__name__)
 
