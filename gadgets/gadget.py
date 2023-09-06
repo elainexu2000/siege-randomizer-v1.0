@@ -1,14 +1,16 @@
+from operators.side import Side
+
 class Gadget:
     """ Attributes:
         name: (string) name of the gadget
-        side: in ["Attack", "Defend"]
+        side: Side.ATTACK or Side.DEFEND
         image_path: relative path to image
     """
     #BASE_DIR = "../../assets/gadgets/"
     BASE_DIR = "../static/assets/gadgets/"
     def __init__(self, name, is_attacker_specific):
         self.name = name
-        self.side = "Attack" if is_attacker_specific else "Defend"
+        self.side = Side.ATTACK if is_attacker_specific else Side.DEFEND
         self.image_path = Gadget.BASE_DIR + type(self).__name__ + ".png"
     
     def __str__(self):

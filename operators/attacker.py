@@ -12,7 +12,7 @@ from weapons.hand_cannon import *
 
 class Attacker(Operator):
     def __init__(self, name):
-        super().__init__(name, side = "Attack")
+        super().__init__(name, side = Side.ATTACK)
 
 class Ash(Attacker):
     def __init__(self):

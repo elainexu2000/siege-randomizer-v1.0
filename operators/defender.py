@@ -11,7 +11,7 @@ from weapons.submachine_gun import *
 
 class Defender(Operator):
     def __init__(self, name):
-        super().__init__(name, side = "Defend")
+        super().__init__(name, side = Side.DEFEND)
         
 class Pulse(Defender):
     def __init__(self):

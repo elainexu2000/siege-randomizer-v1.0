@@ -3,7 +3,7 @@ from random import choice
 class Operator:
     """ Attributes:
         name: operator name
-        side: "Attack" or "Defend"
+        side: Side.ATTACK or Side.DEFEND
         gadgets: set of all available gadgets
         primaries: set of all available primary weapons
         secondaries: set of all available secondary weapons
@@ -37,11 +37,16 @@ class Operator:
         else:
             self.secondaries.append(weapon)
 
-    def create_subdictionary(loadout, obj, entity_name):
-        """Adds obj.name and obj.image_path to loadout
-        Precondition: loadout is a dictionary, obj is a non-null Object with attributes 'name' and 'image_path' 
-            (Operator, Gadget, Weapon, Scope, Barrel, Under_Barrel), entity_name is a string which serves as a key in loadout
-        Example: create_subdictionary(loadout = {}, Ash(), "Operator")
+    def add_entity_to_loadout(loadout, obj, entity_name):
+        ####TODO: entity_name (Operator, Weapon, Scope, etc) is obtainable from obj 
+        #   and should not be presented as a separate parameter
+        
+        """Adds the name and image path of an entity to the loadout dictionary.
+        Precondition: 
+            - loadout: a dictionary representing a loadout.
+            - obj: a non-null object with attributes 'name' and 'image_path'. It belongs to one of the following classes: Operator, Gadget, Weapon, Scope, Barrel, or Under_Barrel.
+            - entity_name: a string that serves as a key in the loadout dictionary.
+        Example: add_entity_to_loadout(loadout = {}, Ash(), "Operator")
             loadout = {
                 "Operator": {
                     "Name": "Ash",
@@ -55,22 +60,22 @@ class Operator:
 
     def add_randomized_weapon(loadout, weapon, is_primary):
         name = "Primary" if is_primary else "Secondary"
-        Operator.create_subdictionary(loadout, weapon, name)
+        Operator.add_entity_to_loadout(loadout, weapon, name)
         scope_class = choice(weapon.scopes)
-        Operator.create_subdictionary(loadout[name], scope_class(), "Scope")
+        Operator.add_entity_to_loadout(loadout[name], scope_class(), "Scope")
         barrel_class = choice(weapon.barrels)
-        Operator.create_subdictionary(loadout[name], barrel_class(), "Barrel")
+        Operator.add_entity_to_loadout(loadout[name], barrel_class(), "Barrel")
         under_barrel_class = choice(weapon.under_barrels)
-        Operator.create_subdictionary(loadout[name], under_barrel_class(), "Under Barrel")
+        Operator.add_entity_to_loadout(loadout[name], under_barrel_class(), "Under Barrel")
 
     def get_random_loadout(self):
         """
         Returns a random loadout in the form of a nested dictionary
         """
         loadout = {}
-        Operator.create_subdictionary(loadout, self, "Operator")
+        Operator.add_entity_to_loadout(loadout, self, "Operator")
         gadget = choice(self.gadgets)
-        Operator.create_subdictionary(loadout, gadget, "Gadget")
+        Operator.add_entity_to_loadout(loadout, gadget, "Gadget")
         primary = choice(self.primaries)
         Operator.add_randomized_weapon(loadout, primary, is_primary=True)
         secondary = choice(self.secondaries)
