@@ -38,7 +38,8 @@ class Operator:
             self.secondaries.append(weapon)
 
     def create_subdictionary(loadout, obj, entity_name):
-        """Adds obj.name and obj.image_path to loadout
+        """Creates a new entry in the loadout dictionary: key = entity_name, 
+            value = {"Name":obj.name, "Image": obj.image_path}
         Precondition: loadout is a dictionary, obj is a non-null Object with attributes 'name' and 'image_path' 
             (Operator, Gadget, Weapon, Scope, Barrel, Under_Barrel), entity_name is a string which serves as a key in loadout
         Example: create_subdictionary(loadout = {}, Ash(), "Operator")
@@ -54,6 +55,9 @@ class Operator:
         loadout[entity_name]["Image"] = obj.image_path
 
     def add_randomized_weapon(loadout, weapon, is_primary):
+        """Adds a weapon to loadout
+        Precondition: loadout is a dictionary; weapon is a non-null Weapon object; is_primary is true if weapon is a primary weapon
+        """
         name = "Primary" if is_primary else "Secondary"
         Operator.create_subdictionary(loadout, weapon, name)
         scope_class = choice(weapon.scopes)
