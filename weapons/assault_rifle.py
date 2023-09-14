@@ -17,8 +17,8 @@ class AssaultRifle(Weapon):
 from weapons.assault_rifle import AssaultRifle as AR
 
 class R4C(AR):
-    def __init__(self):
-        super().__init__("R4-C", barrels = AR.BARRELS + [Extended_Barrel,])
+    def __init__(self, updated_mag = 2.0):
+        super().__init__("R4-C", barrels = AR.BARRELS + [Extended_Barrel,], max_magnification = updated_mag)
 
 class G36C(AR):
     def __init__(self, updated_mag = 1.5):
