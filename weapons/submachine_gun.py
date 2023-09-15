@@ -62,7 +62,7 @@ class M12(SMG):
 
 class MP5SD(SMG):
     def __init__(self):
-        super().__init__("MP5SD", grips = [No_Grip,], max_magnification = 1.5)
+        super().__init__("MP5SD", grips = [No_Grip,], barrels = [Suppressor,], max_magnification = 1.5)
 
 class VECTOR_45_ACP(SMG):
     def __init__(self, updated_mag = 1.5):
