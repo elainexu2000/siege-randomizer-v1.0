@@ -20,7 +20,7 @@ class Bearing_9(MachinePistol):
 
 class SMG_12(MachinePistol):
     def __init__(self):
-        super().__init__("SMG-12", grips = Weapon.GRIPS)
+        super().__init__("SMG-12", grips = Weapon.GRIPS, barrels = [Suppressor,])
 
 class SMG_11(MachinePistol):
     def __init__(self):
