@@ -10,7 +10,9 @@ The Siege Randomizer is a tool that generates a random operator and loadout for 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;See *requirements.txt*  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flask
 
-## Operator icon files are obtained from https://github.com/marcopixel/r6operators
+## Credits: 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Operator icon images: https://github.com/marcopixel/r6operators  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Weapon images: https://www.ubisoft.com/en-us/game/rainbow-six/siege
 
 ## Installation Instructions:
 1. Download project:
@@ -41,37 +43,11 @@ The Siege Randomizer is a tool that generates a random operator and loadout for 
 
 3. Run app.py: 
 
-		Type 'flask run' or 'python app.py' and press enter.
+		Type 'flask run' or 'python app.py'.
 
 4. The program should be accessible via localhost on port 5000:
 
-		Type 'http://127.0.0.1:5000' or 'localhost:5000' into any brower and press enter. 
-
-
-## Usage Guide (for testing): 
-1. Open terminal: 
-	
-	Windows: 
-
-		Press 'Windows key' + 'R' to open the Run dialog box.
-		Type 'cmd' and press Enter.
-	
-	Mac: 
-
-		Press 'Command' + 'Space' to open the Spotlight Search. 
-		Type 'Terminal' in the search bar and press Enter. 
-
-2. Navigate to the directory where *siege_randomizer.py* is located:
-	
-		Type 'cd' followed by the file path to siege-randomizer-vx.x-master: 
-		'cd C:\Users\...\siege-randomizer-vx.x-master'
-
-3. Run *siege_randomizer.py*:
-	
-		Type 'python siege_randomizer.py' and press enter.
-
-4. Follow program instructions.
-
+		Type 'http://127.0.0.1:5000' or 'localhost:5000' into any browser window. 
 
 ---
 
