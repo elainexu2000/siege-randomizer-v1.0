@@ -355,3 +355,5 @@ class Fenrir(Defender):
         self.add_weapon(USG57(), False)
         self.add_gadget(Barbed_Wire())
         self.add_gadget(Bulletproof_Camera())
+
+# Add Tubarao

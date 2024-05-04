@@ -2,6 +2,15 @@
 It is a misconception that a goldfish's memory span is approximately 7 seconds. This idea is often attributed to the belief that goldfish have very short attention spans and forget things quickly. However, scientific research has shown that goldfish can actually retain memories for months and even years.
 
 # NEW:
+- New season overhaul is here! 
+    - Attachment -> grip: add horizontal
+    - Attachment -> scope: remove 1.5x, 2.0x; add one more 2.5x format; adjust 3.0/3.5
+    - Attachment -> laser: check if accessibility is changed since functionality is reworked
+    - Weapon -> Check max_magnification for every operator & weapon
+    - Gadget -> Some operator specific changes have been made; grenades added to many attackers
+    - Operators -> Add new attackers and defender
+- Change website layout lol
+
 1. Rewrite the get_random_loadout function to return both the name and the relative path to image:
 ```Python
 {
@@ -232,3 +241,13 @@ function generate() {
 		- ~~Handgun: GSH-18~~  
 	- ~~Double check: OTs-03 has no access to reflex C?~~
 		- That's correct! -- Cannot align properly with his gadget
+4. ~~MP5SD: ~~
+    - ~~Double check: grip? barrel?~~
+5. Add operator Ram:
+    - Image
+    - Weapon
+    - Gadget
+6. Add operator Tubarao:
+    - Image
+    - Weapon
+    - Gadget

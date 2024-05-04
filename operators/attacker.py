@@ -359,3 +359,6 @@ class Brava(Attacker):
         self.add_weapon(USP40(), False)
         self.add_gadget(Smoke_Grenade())
         self.add_gadget(Claymore())
+
+# Add Ram
+# Add Deimos

@@ -21,6 +21,8 @@ class No_Grip(Grip):
         super().__init__("None")
         self.image_path = "../static/assets/None.png"
 
+# add horizontal grip
+        
 if __name__ == "__main__":
     grips = [cls() for cls in Grip.__subclasses__()]
     for g in grips:

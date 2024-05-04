@@ -63,21 +63,14 @@
             
             var gadgetNameText = document.createElement("div");
             gadgetNameText.textContent = data["Gadget"]["Name"];
-            //gadgetNameText.style.display = "table-cell";
-            //gadgetNameText.style.verticalAlign = "bottom";
-            //gadgetCell.style.position = "relative";
-            //gadgetNameText.style.position = "absolute";
-            //gadgetNameText.style.bottom = "0";
-            gadgetCell.appendChild(gadgetNameText);
             
+            gadgetCell.appendChild(gadgetNameText);
             
             dataRow.appendChild(gadgetCell);
 
             operatorTbody.appendChild(dataRow);
             operatorTable.appendChild(operatorTbody);
 
-
-            // Create the weapons table
             var weaponsTable = document.createElement("table");
             weaponsTable.id = "weapon-table";
             var weaponsTbody = document.createElement("tbody");
