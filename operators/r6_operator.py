@@ -59,6 +59,9 @@ class Operator:
         loadout[entity_name]["Image"] = obj.image_path
 
     def add_randomized_weapon(loadout, weapon, is_primary):
+        """Adds a weapon to loadout
+        Precondition: loadout is a dictionary; weapon is a non-null Weapon object; is_primary is true if weapon is a primary weapon
+        """
         name = "Primary" if is_primary else "Secondary"
         Operator.add_entity_to_loadout(loadout, weapon, name)
         scope_class = choice(weapon.scopes)

@@ -17,7 +17,7 @@ class Attacker(Operator):
 class Ash(Attacker):
     def __init__(self):
         super().__init__("Ash")
-        self.add_weapon(R4C())
+        self.add_weapon(R4C(updated_mag=1.0))
         self.add_weapon(G36C())
         self.add_weapon(USG57(),False)
         self.add_weapon(M45_MEUSOC(),False)
@@ -360,5 +360,12 @@ class Brava(Attacker):
         self.add_gadget(Smoke_Grenade())
         self.add_gadget(Claymore())
 
-# Add Ram
-# Add Deimos
+class Ram(Attacker):
+    def __init__(self):
+        super().__init__("Ram")
+        self.add_weapon(R4C())
+        self.add_weapon(LMG_E())
+        self.add_weapon(MK1_9mm(), False)
+        self.add_weapon(ITA12S(), False)
+        self.add_gadget(Smoke_Grenade())
+        self.add_gadget(Stun_Grenade())
